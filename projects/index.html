@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects & Open Source | Spectra</title>
+<meta name="description" content="What Spectra has built: byJelly, the Spectra Calculator, free open-source Amazon tools on GitHub, and design work on Behance.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.spectramsia.com/projects/">
+<meta name="theme-color" content="#15141A">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectra">
+<meta property="og:title" content="Projects & Open Source | Spectra">
+<meta property="og:description" content="byJelly, the Spectra Calculator, free open-source Amazon tools, and design work — everything Spectra has shipped, in one place.">
+<meta property="og:url" content="https://www.spectramsia.com/projects/">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Projects & Open Source | Spectra">
+<meta name="twitter:description" content="byJelly, the Spectra Calculator, free open-source Amazon tools, and design work — everything Spectra has shipped, in one place.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Spectra Projects & Open Source",
+  "url": "https://www.spectramsia.com/projects/",
+  "isPartOf": { "@type": "WebSite", "name": "Spectra", "url": "https://www.spectramsia.com/" },
+  "about": [
+    { "@type": "SoftwareApplication", "name": "byJelly", "url": "https://tcm.spectramsia.com/", "applicationCategory": "BusinessApplication" },
+    { "@type": "SoftwareApplication", "name": "Spectra Calculator", "url": "https://calculatorapp.spectramsia.com/", "applicationCategory": "FinanceApplication" },
+    { "@type": "SoftwareSourceCode", "name": "AMZ Scrapper Pro", "codeRepository": "https://github.com/khooyc/amazon-data-scrapper-pro", "license": "https://opensource.org/licenses/MIT" },
+    { "@type": "SoftwareSourceCode", "name": "Amazon Metadata Tagger", "codeRepository": "https://github.com/khooyc/amazon-adding-metadata-tag" },
+    { "@type": "SoftwareSourceCode", "name": "Amazon TXT/FileV2 to Excel", "codeRepository": "https://github.com/khooyc/amazon-txt-filev2-to-excel" }
+  ]
+}
+</script>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { overflow-x:hidden; max-width:100%; }
+  body { background:#F7F4EF; font-family:'Hanken Grotesk',sans-serif; color:#15141A; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; }
+  ::selection { background:#A667F5; color:#fff; }
+  a { text-decoration:none; color:inherit; }
+  .rise { animation: rise 0.7s ease-out both; }
+  @keyframes rise { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce) { .rise { animation:none; } }
+
+  .btn-dark:hover { background:#2B2933; }
+  .btn-light:hover { border-color:#15141A; }
+  .service-card:hover { border-color: var(--hover-color, #15141A); }
+  .service-card.is-link:hover { box-shadow:0 4px 18px rgba(21,20,26,0.06); }
+
+  /* ---------- NAV / MOBILE MENU ---------- */
+  .nav-toggle-input{ display:none; }
+  .nav-toggle-label{
+    display:none; width:36px; height:36px; align-items:center; justify-content:center;
+    cursor:pointer; border-radius:8px; flex-shrink:0;
+  }
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
+    content:""; display:block; width:20px; height:2px; background:#15141A; border-radius:2px;
+    position:relative; transition:transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle-label span::before{ position:absolute; top:-6px; }
+  .nav-toggle-label span::after{ position:absolute; top:6px; }
+  .mobile-menu{ display:none; }
+
+  @media (max-width:860px){
+    .nav-links{ display:none !important; }
+    .nav-toggle-label{ display:flex !important; }
+    .nav-cta-desktop{ display:none !important; }
+
+    .mobile-menu{
+      display:block; max-height:0; overflow:hidden; list-style:none;
+      background:#fff; border-top:1px solid #E7E1D8; transition:max-height 0.25s ease;
+    }
+    .mobile-menu li{ border-bottom:1px solid #EDE7DE; }
+    .mobile-menu a{ display:block; padding:14px 32px; font-size:15px; font-weight:500; }
+    .mobile-menu .mm-cta{ font-weight:600; color:#A667F5; }
+    .nav-toggle-input:checked ~ .mobile-menu{ max-height:320px; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span{ background:transparent; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::before{ transform:translateY(6px) rotate(45deg); }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::after{ transform:translateY(-6px) rotate(-45deg); }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero-wrap{ max-width:1180px; margin:0 auto; padding:80px 32px 56px; text-align:center; display:flex; flex-direction:column; align-items:center; }
+  .hero-title{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:64px; line-height:1.0; letter-spacing:-0.045em; max-width:860px; }
+  .hero-lead{ font-size:19px; line-height:1.6; color:#55525E; max-width:560px; margin-top:24px; }
+  @media (max-width:760px){
+    .hero-wrap{ padding:52px 24px 40px; }
+    .hero-title{ font-size:36px !important; line-height:1.06 !important; letter-spacing:-0.03em !important; }
+    .hero-lead{ font-size:16px !important; }
+  }
+
+  /* ---------- SECTION HEAD ---------- */
+  .sec-head{ display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:40px; }
+  .sec-title{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:38px; line-height:1.05; letter-spacing:-0.035em; max-width:560px; }
+  .sec-sub{ font-size:16px; line-height:1.6; color:#6B6874; max-width:320px; }
+  @media (max-width:760px){
+    .sec-title{ font-size:26px !important; }
+    section{ padding-left:24px; padding-right:24px; }
+  }
+
+  /* ---------- GRIDS ---------- */
+  .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media (max-width:860px){
+    .grid-3{ grid-template-columns:repeat(2,1fr) !important; }
+  }
+  @media (max-width:560px){
+    .grid-3{ grid-template-columns:1fr !important; }
+    .grid-2{ grid-template-columns:1fr !important; }
+  }
+
+  .service-card{ background:#fff; border:1px solid #EDE7DE; border-radius:22px; padding:34px; display:block; }
+  .service-card h3{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.02em; margin-bottom:10px; }
+  .service-card p{ font-size:15px; line-height:1.6; color:#6B6874; }
+  .service-card .card-link{ display:inline-flex; align-items:center; gap:6px; margin-top:18px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#15141A; }
+  .icon-box{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:24px; }
+  .status-pill{ display:inline-block; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-bottom:14px; }
+  @media (max-width:760px){ .service-card{ padding:26px; } }
+
+  /* ---------- PLATFORM ROW (used for elsewhere links) ---------- */
+  .platform-row{ display:flex; flex-wrap:wrap; gap:12px 14px; }
+  .platform-row a{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:15px;
+    color:#15141A; background:#fff; border:1px solid #EDE7DE;
+    padding:12px 22px; border-radius:999px; letter-spacing:-0.01em;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .platform-row a:hover{ border-color:#15141A; transform:translateY(-1px); }
+
+  /* ---------- CTA ---------- */
+  .cta-box{ background:#15141A; border-radius:32px; padding:72px 56px; text-align:center; position:relative; overflow:hidden; }
+  .cta-title{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:46px; line-height:1.05; letter-spacing:-0.04em; color:#fff; max-width:640px; margin:0 auto; }
+  .cta-sub{ font-size:17px; line-height:1.6; color:#B4AFBC; max-width:480px; margin:20px auto 0; }
+  @media (max-width:760px){
+    .cta-box{ padding:48px 28px; border-radius:24px; }
+    .cta-title{ font-size:30px !important; }
+    .cta-sub{ font-size:15px !important; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-inner{ max-width:1180px; margin:0 auto; padding:56px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media (max-width:560px){
+    .footer-inner{ flex-direction:column; text-align:center; padding:40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div style="overflow-x:hidden;">
+
+  <!-- ===== NAV ===== -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <nav class="nav-bar" style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(247,244,239,0.9);border-bottom:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true">
+          <div style="width:13px;height:13px;border-radius:50%;background:#F7F4EF;"></div>
+        </div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:34px;">
+        <a href="/#services" style="font-size:15px;font-weight:500;color:#3A3843;">Services</a>
+        <a href="/#work" style="font-size:15px;font-weight:500;color:#3A3843;">Work</a>
+        <a href="/projects/" style="font-size:15px;font-weight:700;color:#15141A;">Projects</a>
+        <a href="/#contact" class="btn-dark" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;color:#fff;background:#15141A;padding:10px 20px;border-radius:999px;">Start a project</a>
+      </div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span></label>
+    </div>
+  </nav>
+  <ul class="mobile-menu">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/#contact" class="mm-cta">Start a project →</a></li>
+  </ul>
+
+  <!-- ===== HERO ===== -->
+  <header id="top" class="hero-wrap">
+    <div class="rise" style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #EDE7DE;border-radius:999px;padding:7px 16px 7px 8px;margin-bottom:32px;">
+      <span style="width:18px;height:18px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);" aria-hidden="true"></span>
+      <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6B6874;">What we've shipped</span>
+    </div>
+
+    <h1 class="rise hero-title">Products, tools, and design — out in the world.</h1>
+
+    <p class="rise hero-lead">
+      Two live apps, a growing set of free open-source tools for Amazon sellers, and the design work behind them. Try anything below — most of it costs nothing.
+    </p>
+  </header>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products" style="max-width:1180px;margin:0 auto;padding:56px 32px;">
+    <div class="sec-head">
+      <div>
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px;">
+          <div style="height:12px;width:12px;border-radius:3px;background:linear-gradient(135deg,#FF5D6C,#A667F5);" aria-hidden="true"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A8692;">Live products</span>
+        </div>
+        <h2 class="sec-title">Apps we built and run ourselves.</h2>
+      </div>
+      <p class="sec-sub">Real products with real users — not just concepts.</p>
+    </div>
+
+    <div class="grid-2">
+      <a href="https://calculatorapp.spectramsia.com/" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#4C82F7;">
+        <span class="status-pill" style="background:rgba(76,130,247,0.13);color:#2E5FCC;">Live app</span>
+        <div class="icon-box" style="background:rgba(76,130,247,0.13);"><div style="width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:23px solid #4C82F7;"></div></div>
+        <h3>Spectra Calculator</h3>
+        <p>Home, car, and loan affordability calculator for the Malaysian market — plain-language breakdowns, no sign-up required.</p>
+        <span class="card-link">calculatorapp.spectramsia.com →</span>
+      </a>
+      <a href="https://tcm.spectramsia.com/" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#35C79A;">
+        <span class="status-pill" style="background:rgba(53,199,154,0.16);color:#1F8F6C;">Invite-only beta</span>
+        <div class="icon-box" style="background:rgba(53,199,154,0.16);"><div style="width:26px;height:26px;border-radius:50%;border:3px solid #35C79A;"></div></div>
+        <h3>byJelly</h3>
+        <p>A practice dashboard built for clinics. Currently testing with a small group of doctors — register for a demo to get early access.</p>
+        <span class="card-link">tcm.spectramsia.com →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== OPEN SOURCE ===== -->
+  <section id="open-source" style="border-top:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 32px;">
+      <div class="sec-head">
+        <div>
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px;">
+            <div style="height:12px;width:12px;border-radius:3px;background:linear-gradient(135deg,#FFB443,#35C79A);" aria-hidden="true"></div>
+            <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A8692;">Free & open source</span>
+          </div>
+          <h2 class="sec-title">Tools we've open-sourced for Amazon sellers.</h2>
+        </div>
+        <p class="sec-sub">Built for our own use, released free on GitHub. Star them, fork them, tell us what's missing.</p>
+      </div>
+
+      <div class="grid-3">
+        <a href="https://github.com/khooyc/amazon-data-scrapper-pro" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#FF5D6C;">
+          <span class="status-pill" style="background:rgba(255,93,108,0.12);color:#C5323F;">Chrome extension</span>
+          <div class="icon-box" style="background:rgba(255,93,108,0.12);"><div style="width:24px;height:19px;border-radius:5px;border:3px solid #FF5D6C;"></div></div>
+          <h3>AMZ Scrapper Pro</h3>
+          <p>Extract product data straight off Amazon search &amp; product pages — price, ASIN, BSR, ratings, variants — export to Excel or CSV in one click.</p>
+          <span class="card-link">github.com/khooyc →</span>
+        </a>
+        <a href="https://github.com/khooyc/amazon-adding-metadata-tag" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#A667F5;">
+          <span class="status-pill" style="background:rgba(166,103,245,0.13);color:#7A3FCC;">Windows tool</span>
+          <div class="icon-box" style="background:rgba(166,103,245,0.13);"><div style="width:24px;height:24px;background:#A667F5;transform:rotate(45deg);border-radius:6px;"></div></div>
+          <h3>Amazon Metadata Tagger</h3>
+          <p>Human-first Windows reviewer for tagging Amazon synthetic-performer XMP metadata before upload.</p>
+          <span class="card-link">github.com/khooyc →</span>
+        </a>
+        <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#4C82F7;">
+          <span class="status-pill" style="background:rgba(76,130,247,0.13);color:#2E5FCC;">Windows tool</span>
+          <div class="icon-box" style="background:rgba(76,130,247,0.13);"><div style="width:20px;height:28px;border-radius:6px;border:3px solid #4C82F7;"></div></div>
+          <h3>TXT/FileV2 → Excel</h3>
+          <p>Converts Amazon TXT and FileV2 report exports into clean Excel workbooks, ready for analysis — no manual reformatting.</p>
+          <span class="card-link">github.com/khooyc →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ELSEWHERE ===== -->
+  <section id="elsewhere" style="border-top:1px solid #E7E1D8;background:#fff;">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 32px;">
+      <div class="sec-head" style="margin-bottom:28px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:18px;">
+            <div style="height:12px;width:12px;border-radius:3px;background:linear-gradient(135deg,#4C82F7,#A667F5);" aria-hidden="true"></div>
+            <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A8692;">Find us elsewhere</span>
+          </div>
+          <h2 class="sec-title">Design, code, and everything in between.</h2>
+        </div>
+      </div>
+      <div class="platform-row">
+        <a href="https://github.com/khooyc" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.behance.net/coolien" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.instagram.com/spectramsia/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61565560987542" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="contact" style="border-top:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:88px 32px;">
+      <div class="cta-box">
+        <div style="position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);opacity:0.22;filter:blur(8px);" aria-hidden="true"></div>
+        <div style="position:relative;">
+          <h2 class="cta-title">Want something like this built for you?</h2>
+          <p class="cta-sub">Same team, same tools. Tell us what you're making.</p>
+          <div style="display:flex;gap:14px;margin-top:34px;justify-content:center;flex-wrap:wrap;">
+            <a href="mailto:hello@spectramsia.com" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;color:#15141A;background:#fff;padding:15px 30px;border-radius:999px;">Start a project</a>
+            <a href="https://wa.me/601151725789" target="_blank" rel="noopener" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:15px 30px;border-radius:999px;">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="border-top:1px solid #E7E1D8;">
+    <div class="footer-inner">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:26px;height:26px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true"><div style="width:12px;height:12px;border-radius:50%;background:#F7F4EF;"></div></div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div style="text-align:center;">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#8A8692;">The full spectrum of digital. · © 2026 Spectra</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:#B4AFBC;margin-top:4px;">SSM Registered as Spectrality Enterprise — No. 202403201869 (IP0599248-P)</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
