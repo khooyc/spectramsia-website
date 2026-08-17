@@ -134,7 +134,12 @@
   .service-card .card-link{ display:inline-flex; align-items:center; gap:6px; margin-top:18px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#15141A; }
   .icon-box{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:24px; }
   .status-pill{ display:inline-block; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-bottom:14px; }
-  @media (max-width:760px){ .service-card{ padding:26px; } }
+  .card-thumb{ height:220px; margin:-34px -34px 24px; border-radius:21px 21px 0 0; overflow:hidden; background:#F3EFE7; border-bottom:1px solid #EDE7DE; }
+  .card-thumb img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  @media (max-width:760px){
+    .service-card{ padding:26px; }
+    .card-thumb{ height:180px; margin:-26px -26px 20px; }
+  }
 
   /* ---------- PLATFORM ROW (used for elsewhere links) ---------- */
   .platform-row{ display:flex; flex-wrap:wrap; gap:12px 14px; }
@@ -225,6 +230,7 @@
 
     <div class="grid-2">
       <a href="https://calculatorapp.spectramsia.com/" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#4C82F7;">
+        <div class="card-thumb"><img src="/projects/images/spectra-calculator.png" alt="Spectra Calculator app screenshot — home screen with loan calculators" loading="lazy"></div>
         <span class="status-pill" style="background:rgba(76,130,247,0.13);color:#2E5FCC;">Live app</span>
         <div class="icon-box" style="background:rgba(76,130,247,0.13);"><div style="width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:23px solid #4C82F7;"></div></div>
         <h3>Spectra Calculator</h3>
@@ -232,6 +238,7 @@
         <span class="card-link">calculatorapp.spectramsia.com →</span>
       </a>
       <a href="https://tcm.spectramsia.com/" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#35C79A;">
+        <div class="card-thumb"><img src="/projects/images/byjelly.png" alt="byJelly practice dashboard sign-in screen" loading="lazy"></div>
         <span class="status-pill" style="background:rgba(53,199,154,0.16);color:#1F8F6C;">Invite-only beta</span>
         <div class="icon-box" style="background:rgba(53,199,154,0.16);"><div style="width:26px;height:26px;border-radius:50%;border:3px solid #35C79A;"></div></div>
         <h3>byJelly</h3>
@@ -257,6 +264,7 @@
 
       <div class="grid-3">
         <a href="https://github.com/khooyc/amazon-data-scrapper-pro" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#FF5D6C;">
+          <div class="card-thumb"><img src="/projects/images/amz-scrapper-pro.svg" alt="AMZ Scrapper Pro placeholder — screenshot coming soon" loading="lazy"></div>
           <span class="status-pill" style="background:rgba(255,93,108,0.12);color:#C5323F;">Chrome extension</span>
           <div class="icon-box" style="background:rgba(255,93,108,0.12);"><div style="width:24px;height:19px;border-radius:5px;border:3px solid #FF5D6C;"></div></div>
           <h3>AMZ Scrapper Pro</h3>
@@ -264,6 +272,7 @@
           <span class="card-link">github.com/khooyc →</span>
         </a>
         <a href="https://github.com/khooyc/amazon-adding-metadata-tag" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#A667F5;">
+          <div class="card-thumb"><img src="/projects/images/amazon-metadata-tagger.svg" alt="Amazon Metadata Tagger placeholder — screenshot coming soon" loading="lazy"></div>
           <span class="status-pill" style="background:rgba(166,103,245,0.13);color:#7A3FCC;">Windows &amp; macOS app</span>
           <div class="icon-box" style="background:rgba(166,103,245,0.13);"><div style="width:24px;height:24px;background:#A667F5;transform:rotate(45deg);border-radius:6px;"></div></div>
           <h3>Amazon Metadata Tagger</h3>
@@ -271,6 +280,7 @@
           <span class="card-link">github.com/khooyc →</span>
         </a>
         <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel" target="_blank" rel="noopener" class="service-card is-link" style="--hover-color:#4C82F7;">
+          <div class="card-thumb"><img src="/projects/images/amazon-report-to-excel.svg" alt="Amazon Report to Excel placeholder — screenshot coming soon" loading="lazy"></div>
           <span class="status-pill" style="background:rgba(76,130,247,0.13);color:#2E5FCC;">Chrome extension</span>
           <div class="icon-box" style="background:rgba(76,130,247,0.13);"><div style="width:20px;height:28px;border-radius:6px;border:3px solid #4C82F7;"></div></div>
           <h3>Amazon Report to Excel</h3>

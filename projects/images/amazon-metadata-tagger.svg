@@ -1,0 +1,13 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#F1EAFB"/>
+  <rect x="0" y="0" width="600" height="40" fill="#fff"/>
+  <circle cx="22" cy="20" r="6" fill="#E4DED3"/>
+  <circle cx="42" cy="20" r="6" fill="#E4DED3"/>
+  <circle cx="62" cy="20" r="6" fill="#E4DED3"/>
+  <rect x="90" y="12" width="420" height="16" rx="8" fill="#F3EFE7"/>
+  <g transform="translate(268,148) rotate(45 42 42)">
+    <rect x="0" y="0" width="84" height="84" rx="18" fill="#A667F5"/>
+  </g>
+  <text x="300" y="290" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#15141A" text-anchor="middle">Amazon Metadata Tagger</text>
+  <text x="300" y="322" font-family="Arial, sans-serif" font-size="15" fill="#7C6F87" text-anchor="middle">Windows &amp; macOS app — preview coming soon</text>
+</svg>
