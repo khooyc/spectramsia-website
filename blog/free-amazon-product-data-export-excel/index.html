@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Export Amazon Product Data to Excel for Free | Spectra</title>
+<meta name="description" content="Step-by-step guide to exporting Amazon product data — price, ASIN, BSR, ratings, variants — to Excel or CSV using AMZ Scrapper Pro, a free open-source Chrome extension.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.spectramsia.com/blog/free-amazon-product-data-export-excel/">
+<meta name="theme-color" content="#15141A">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Spectra">
+<meta property="og:title" content="How to Export Amazon Product Data to Excel for Free">
+<meta property="og:description" content="Pull price, ASIN, BSR, ratings and variant data off any Amazon page into Excel or CSV — no paid subscription, using the free AMZ Scrapper Pro extension.">
+<meta property="og:url" content="https://www.spectramsia.com/blog/free-amazon-product-data-export-excel/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Export Amazon Product Data to Excel for Free",
+      "description": "Step-by-step guide to exporting Amazon product data to Excel or CSV using AMZ Scrapper Pro, a free open-source Chrome extension.",
+      "author": { "@type": "Person", "name": "Khoo YC", "url": "https://github.com/khooyc" },
+      "publisher": { "@type": "Organization", "name": "Spectra", "url": "https://www.spectramsia.com/" },
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "mainEntityOfPage": "https://www.spectramsia.com/blog/free-amazon-product-data-export-excel/"
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to export Amazon product data to Excel with AMZ Scrapper Pro",
+      "step": [
+        { "@type": "HowToStep", "name": "Install the extension", "text": "Download the source from GitHub, open chrome://extensions, enable Developer mode, click Load unpacked, and select the folder." },
+        { "@type": "HowToStep", "name": "Open Amazon and select products", "text": "Search or open a product page on a supported Amazon domain, then click the extension icon and select the products you want." },
+        { "@type": "HowToStep", "name": "Extract data", "text": "Click Extract Data and wait for scraping to finish." },
+        { "@type": "HowToStep", "name": "Download Excel or CSV", "text": "Click Download Excel or Download CSV to save a formatted file, or Copy CSV to paste elsewhere." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is AMZ Scrapper Pro really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It's open source under the MIT license, published free on GitHub — no subscription, no account, no usage limit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Amazon sites does it work on?",
+          "acceptedAnswer": { "@type": "Answer", "text": "amazon.co.uk, amazon.com, amazon.de, amazon.fr, amazon.es, amazon.it, amazon.ca, and amazon.com.au." }
+        },
+        {
+          "@type": "Question",
+          "name": "What data fields can I export?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Product name, price, ASIN, brand, and monthly sales by default, plus optional fields: BSR ranking, ratings, reviews, item weight and dimensions, variants (colour/size/style), release date, and scrape timestamp." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it upload my data anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It's a browser extension that reads pages you already have open and exports locally — nothing is sent to a server." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { overflow-x:hidden; max-width:100%; }
+  body { background:#F7F4EF; font-family:'Hanken Grotesk',sans-serif; color:#15141A; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; }
+  ::selection { background:#A667F5; color:#fff; }
+  a { text-decoration:none; color:inherit; }
+  .btn-dark:hover { background:#2B2933; }
+
+  .nav-toggle-input{ display:none; }
+  .nav-toggle-label{ display:none; width:36px; height:36px; align-items:center; justify-content:center; cursor:pointer; border-radius:8px; flex-shrink:0; }
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
+    content:""; display:block; width:20px; height:2px; background:#15141A; border-radius:2px;
+    position:relative; transition:transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle-label span::before{ position:absolute; top:-6px; }
+  .nav-toggle-label span::after{ position:absolute; top:6px; }
+  .mobile-menu{ display:none; }
+  @media (max-width:860px){
+    .nav-links{ display:none !important; }
+    .nav-toggle-label{ display:flex !important; }
+    .mobile-menu{ display:block; max-height:0; overflow:hidden; list-style:none; background:#fff; border-top:1px solid #E7E1D8; transition:max-height 0.25s ease; }
+    .mobile-menu li{ border-bottom:1px solid #EDE7DE; }
+    .mobile-menu a{ display:block; padding:14px 32px; font-size:15px; font-weight:500; }
+    .mobile-menu .mm-cta{ font-weight:600; color:#A667F5; }
+    .nav-toggle-input:checked ~ .mobile-menu{ max-height:320px; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span{ background:transparent; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::before{ transform:translateY(6px) rotate(45deg); }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::after{ transform:translateY(-6px) rotate(-45deg); }
+  }
+
+  .article{ max-width:720px; margin:0 auto; padding:64px 32px 96px; }
+  .article-tag{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8A8692; }
+  .article h1{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:44px; line-height:1.08; letter-spacing:-0.03em; margin:14px 0 16px; }
+  .byline{ font-size:14px; color:#8A8692; margin-bottom:36px; }
+  .byline a{ color:#15141A; font-weight:600; }
+  .article p{ font-size:17px; line-height:1.75; color:#3A3843; margin-bottom:20px; }
+  .article h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:27px; letter-spacing:-0.02em; margin:44px 0 16px; }
+  .article h3{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em; margin:28px 0 10px; }
+  .article ul, .article ol{ margin:0 0 20px 22px; }
+  .article li{ font-size:17px; line-height:1.75; color:#3A3843; margin-bottom:8px; }
+  .article code{ font-family:'Space Mono',monospace; font-size:14px; background:#EFEAE1; padding:2px 6px; border-radius:4px; }
+
+  .quick-answer{ background:#fff; border:1px solid #EDE7DE; border-left:4px solid #35C79A; border-radius:16px; padding:24px 28px; margin:28px 0 40px; }
+  .quick-answer .qa-label{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#1F8F6C; margin-bottom:8px; display:block; }
+  .quick-answer p{ font-size:16px; margin:0; color:#15141A; }
+
+  .faq-item{ border-top:1px solid #EDE7DE; padding:22px 0; }
+  .faq-item:last-child{ border-bottom:1px solid #EDE7DE; }
+  .faq-item h3{ margin:0 0 8px; font-size:18px; }
+  .faq-item p{ font-size:16px; margin:0; color:#6B6874; }
+
+  .cta-card{ background:#15141A; border-radius:24px; padding:44px; text-align:center; margin-top:56px; }
+  .cta-card h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; color:#fff; margin-bottom:12px; letter-spacing:-0.02em; }
+  .cta-card p{ color:#B4AFBC; font-size:16px; margin-bottom:24px; }
+  .cta-card a{ display:inline-block; font-weight:600; font-size:15px; color:#15141A; background:#fff; padding:14px 26px; border-radius:999px; margin:0 6px 10px; }
+  .cta-card a.secondary{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.25); }
+
+  @media (max-width:760px){
+    .article{ padding:48px 24px 64px; }
+    .article h1{ font-size:32px !important; }
+    .cta-card{ padding:32px 24px; }
+  }
+
+  .footer-inner{ max-width:1180px; margin:0 auto; padding:56px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media (max-width:560px){ .footer-inner{ flex-direction:column; text-align:center; padding:40px 24px; } }
+</style>
+</head>
+<body>
+
+<div style="overflow-x:hidden;">
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <nav class="nav-bar" style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(247,244,239,0.9);border-bottom:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true">
+          <div style="width:13px;height:13px;border-radius:50%;background:#F7F4EF;"></div>
+        </div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:34px;">
+        <a href="/#services" style="font-size:15px;font-weight:500;color:#3A3843;">Services</a>
+        <a href="/projects/" style="font-size:15px;font-weight:500;color:#3A3843;">Projects</a>
+        <a href="/blog/" style="font-size:15px;font-weight:700;color:#15141A;">Blog</a>
+        <a href="/#contact" class="btn-dark" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;color:#fff;background:#15141A;padding:10px 20px;border-radius:999px;">Start a project</a>
+      </div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span></label>
+    </div>
+  </nav>
+  <ul class="mobile-menu">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/#contact" class="mm-cta">Start a project →</a></li>
+  </ul>
+
+  <article class="article">
+    <span class="article-tag">Guide · AMZ Scrapper Pro</span>
+    <h1>How to Export Amazon Product Data to Excel for Free</h1>
+    <div class="byline">By <a href="https://github.com/khooyc" target="_blank" rel="noopener">Khoo YC</a> · Spectra · Updated 17 August 2026</div>
+
+    <div class="quick-answer">
+      <span class="qa-label">Quick answer</span>
+      <p>Install <a href="https://github.com/khooyc/amazon-data-scrapper-pro" target="_blank" rel="noopener"><strong>AMZ Scrapper Pro</strong></a>, a free open-source Chrome/Edge/Brave extension. Select products on any Amazon search or product page, click Extract Data, then Download Excel or CSV — the file saves straight to your computer, no subscription or account required.</p>
+    </div>
+
+    <p>If you've ever needed a spreadsheet of Amazon product prices, ASINs, or ratings and ended up copy-pasting each one by hand, you already know why this is worth automating. Most tools that do this well are paid monthly subscriptions. AMZ Scrapper Pro does the specific job — page-level data extraction to Excel/CSV — for free, and the code is open source so you can see exactly what it does.</p>
+
+    <h2>What you can pull out of a single page</h2>
+    <p>Two categories of fields are available:</p>
+    <h3>Always included</h3>
+    <ul>
+      <li>Product Name</li>
+      <li>Price</li>
+      <li>ASIN</li>
+      <li>Brand Name</li>
+      <li>Monthly Sales</li>
+    </ul>
+    <h3>Optional (toggle on as needed)</h3>
+    <ul>
+      <li>BSR ranking, with category breakdown</li>
+      <li>Ratings and review count</li>
+      <li>Number of pieces</li>
+      <li>Item weight and dimensions</li>
+      <li>Variants — colour, size, style, scent, flavour — extracted from the actual swatch/dropdown labels, not ASINs</li>
+      <li>Product release date</li>
+      <li>Scraped date and time</li>
+    </ul>
+
+    <h2>Step-by-step install and use</h2>
+    <h3>1. Install the extension</h3>
+    <ol>
+      <li>Get the source from <a href="https://github.com/khooyc/amazon-data-scrapper-pro" target="_blank" rel="noopener">github.com/khooyc/amazon-data-scrapper-pro</a> (Code → Download ZIP, then unzip).</li>
+      <li>Open <code>chrome://extensions</code> (or <code>edge://extensions</code>).</li>
+      <li>Turn on <strong>Developer mode</strong> (top right).</li>
+      <li>Click <strong>Load unpacked</strong> and select the unzipped folder.</li>
+    </ol>
+    <h3>2. Select products</h3>
+    <p>Go to a supported Amazon site, search or open a product page, scroll to load everything you want to capture, then click the extension icon and select products — an orange outline confirms what's selected.</p>
+    <h3>3. Extract and download</h3>
+    <p>Click <strong>Extract Data</strong>, wait for it to finish, then choose <strong>Download Excel</strong> (auto-sized columns, opens directly in Excel/Sheets), <strong>Download CSV</strong>, or <strong>Copy CSV</strong> to paste elsewhere.</p>
+
+    <h2>Supported Amazon domains</h2>
+    <p>amazon.co.uk, amazon.com, amazon.de, amazon.fr, amazon.es, amazon.it, amazon.ca, and amazon.com.au.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>Is it really free?</h3>
+      <p>Yes — MIT-licensed and published free on GitHub. No subscription, no account, no row limits.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does it send my data anywhere?</h3>
+      <p>No. It reads the Amazon page already open in your browser and exports locally — nothing goes to a remote server.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use this for business or research?</h3>
+      <p>Yes — competitor pricing checks, catalog audits, and market research are common uses. You're responsible for complying with Amazon's own Conditions of Use in your jurisdiction.</p>
+    </div>
+
+    <div class="cta-card">
+      <h2>Get AMZ Scrapper Pro</h2>
+      <p>Free, open source, MIT licensed. Star it, fork it, or open an issue with what you'd use it for.</p>
+      <a href="https://github.com/khooyc/amazon-data-scrapper-pro" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="/projects/" class="secondary">See all projects</a>
+    </div>
+  </article>
+
+  <footer style="border-top:1px solid #E7E1D8;">
+    <div class="footer-inner">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:26px;height:26px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true"><div style="width:12px;height:12px;border-radius:50%;background:#F7F4EF;"></div></div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div style="text-align:center;">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#8A8692;">The full spectrum of digital. · © 2026 Spectra</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:#B4AFBC;margin-top:4px;">SSM Registered as Spectrality Enterprise — No. 202403201869 (IP0599248-P)</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

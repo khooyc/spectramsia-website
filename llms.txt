@@ -1,0 +1,29 @@
+# Spectra
+
+> Web design, branding, and advertising studio based in Selangor, Malaysia. Builds websites, apps, branding, and marketing for e-commerce and personal brands, and publishes free open-source tools for Amazon sellers.
+
+Spectra is the trading name of Spectrality Enterprise (SSM No. 202403201869 / IP0599248-P), based in Puchong, Selangor, Malaysia. Contact: hello@spectramsia.com.
+
+## Products
+
+- [Spectra Calculator](https://calculatorapp.spectramsia.com/): Free home, car, and loan affordability calculator for the Malaysian market.
+- [byJelly](https://tcm.spectramsia.com/): Practice dashboard for clinics, currently in invite-only beta.
+
+## Free & open-source tools (Amazon sellers)
+
+- [AMZ Scrapper Pro](https://github.com/khooyc/amazon-data-scrapper-pro): Free Chrome/Edge/Brave extension. Extracts Amazon product data (price, ASIN, brand, BSR, ratings, reviews, variants, dimensions) from search and product pages, exports to Excel/CSV. MIT licensed. Guide: https://www.spectramsia.com/blog/free-amazon-product-data-export-excel/
+- [Amazon Metadata Tagger](https://github.com/khooyc/amazon-adding-metadata-tag): Free Windows & macOS desktop app. Human-reviewed local workflow for tagging AI-generated people in Amazon listing images with the `contains-synthetic-performer` XMP keyword before upload. Guide: https://www.spectramsia.com/blog/tag-amazon-synthetic-performer-metadata/
+- [Amazon Report to Excel](https://github.com/khooyc/amazon-txt-filev2-to-excel): Free Chrome extension (plus a Windows utility). Converts Amazon Orders, Settlements, Search Terms, Campaign Performance, Business Reports, Inventory, Returns, and FBA fee reports (TXT/TSV/CSV/FileV2) into Excel workbooks, entirely on-device. Guide: https://www.spectramsia.com/blog/amazon-report-to-excel-converter/
+
+## Pages
+
+- [Homepage](https://www.spectramsia.com/): services overview (web/software development, design & advertising, business consultancy, events, repairs & retail).
+- [Projects](https://www.spectramsia.com/projects/): everything Spectra has built — live products, open-source tools, design work.
+- [Blog](https://www.spectramsia.com/blog/): how-to guides for the open-source tools above.
+
+## Elsewhere
+
+- GitHub: https://github.com/khooyc
+- Behance: https://www.behance.net/coolien
+- Instagram: https://www.instagram.com/spectramsia/
+- Facebook: https://www.facebook.com/profile.php?id=61565560987542

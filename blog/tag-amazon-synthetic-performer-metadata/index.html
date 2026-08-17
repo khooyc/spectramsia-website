@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Tag Amazon Synthetic-Performer XMP Metadata for Free | Spectra</title>
+<meta name="description" content="A free, local, human-reviewed Windows & macOS app for flagging AI-generated people in Amazon listing images with the correct XMP metadata keyword before upload.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.spectramsia.com/blog/tag-amazon-synthetic-performer-metadata/">
+<meta name="theme-color" content="#15141A">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Spectra">
+<meta property="og:title" content="How to Tag Amazon Synthetic-Performer XMP Metadata for Free">
+<meta property="og:description" content="A free, local, human-reviewed desktop app for flagging AI-generated people in listing images before upload.">
+<meta property="og:url" content="https://www.spectramsia.com/blog/tag-amazon-synthetic-performer-metadata/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Tag Amazon Synthetic-Performer XMP Metadata for Free",
+      "description": "A free, local, human-reviewed Windows & macOS app for flagging AI-generated people in Amazon listing images before upload.",
+      "author": { "@type": "Person", "name": "Khoo YC", "url": "https://github.com/khooyc" },
+      "publisher": { "@type": "Organization", "name": "Spectra", "url": "https://www.spectramsia.com/" },
+      "datePublished": "2026-08-17",
+      "dateModified": "2026-08-17",
+      "mainEntityOfPage": "https://www.spectramsia.com/blog/tag-amazon-synthetic-performer-metadata/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the contains-synthetic-performer tag do?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The app writes that exact keyword into the image's XMP dc:subject field, then re-reads the file to confirm the write succeeded before marking it verified locally." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool upload to Amazon for me?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It only prepares files on your computer. You still upload the tagged files to Seller Central yourself." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my media sent anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — everything runs locally with no network or cloud AI integrations, and the renderer can only access the folder you select during that session." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this an official Amazon tool?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It's an independent, free tool and is not endorsed by, sponsored by, or affiliated with Amazon. Always confirm against Amazon's current listing requirements before uploading." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { overflow-x:hidden; max-width:100%; }
+  body { background:#F7F4EF; font-family:'Hanken Grotesk',sans-serif; color:#15141A; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; }
+  ::selection { background:#A667F5; color:#fff; }
+  a { text-decoration:none; color:inherit; }
+  .btn-dark:hover { background:#2B2933; }
+
+  .nav-toggle-input{ display:none; }
+  .nav-toggle-label{ display:none; width:36px; height:36px; align-items:center; justify-content:center; cursor:pointer; border-radius:8px; flex-shrink:0; }
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
+    content:""; display:block; width:20px; height:2px; background:#15141A; border-radius:2px;
+    position:relative; transition:transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle-label span::before{ position:absolute; top:-6px; }
+  .nav-toggle-label span::after{ position:absolute; top:6px; }
+  .mobile-menu{ display:none; }
+  @media (max-width:860px){
+    .nav-links{ display:none !important; }
+    .nav-toggle-label{ display:flex !important; }
+    .mobile-menu{ display:block; max-height:0; overflow:hidden; list-style:none; background:#fff; border-top:1px solid #E7E1D8; transition:max-height 0.25s ease; }
+    .mobile-menu li{ border-bottom:1px solid #EDE7DE; }
+    .mobile-menu a{ display:block; padding:14px 32px; font-size:15px; font-weight:500; }
+    .mobile-menu .mm-cta{ font-weight:600; color:#A667F5; }
+    .nav-toggle-input:checked ~ .mobile-menu{ max-height:320px; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span{ background:transparent; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::before{ transform:translateY(6px) rotate(45deg); }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::after{ transform:translateY(-6px) rotate(-45deg); }
+  }
+
+  .article{ max-width:720px; margin:0 auto; padding:64px 32px 96px; }
+  .article-tag{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8A8692; }
+  .article h1{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:42px; line-height:1.1; letter-spacing:-0.03em; margin:14px 0 16px; }
+  .byline{ font-size:14px; color:#8A8692; margin-bottom:36px; }
+  .byline a{ color:#15141A; font-weight:600; }
+  .article p{ font-size:17px; line-height:1.75; color:#3A3843; margin-bottom:20px; }
+  .article h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:27px; letter-spacing:-0.02em; margin:44px 0 16px; }
+  .article h3{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em; margin:28px 0 10px; }
+  .article ul, .article ol{ margin:0 0 20px 22px; }
+  .article li{ font-size:17px; line-height:1.75; color:#3A3843; margin-bottom:8px; }
+  .article code{ font-family:'Space Mono',monospace; font-size:14px; background:#EFEAE1; padding:2px 6px; border-radius:4px; }
+
+  .quick-answer{ background:#fff; border:1px solid #EDE7DE; border-left:4px solid #A667F5; border-radius:16px; padding:24px 28px; margin:28px 0 40px; }
+  .quick-answer .qa-label{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#7A3FCC; margin-bottom:8px; display:block; }
+  .quick-answer p{ font-size:16px; margin:0; color:#15141A; }
+
+  .warn-box{ background:#FFF7ED; border:1px solid #F3D9B5; border-radius:16px; padding:20px 24px; margin:0 0 32px; }
+  .warn-box p{ font-size:15px; margin:0; color:#7A4E15; }
+
+  .faq-item{ border-top:1px solid #EDE7DE; padding:22px 0; }
+  .faq-item:last-child{ border-bottom:1px solid #EDE7DE; }
+  .faq-item h3{ margin:0 0 8px; font-size:18px; }
+  .faq-item p{ font-size:16px; margin:0; color:#6B6874; }
+
+  .cta-card{ background:#15141A; border-radius:24px; padding:44px; text-align:center; margin-top:56px; }
+  .cta-card h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; color:#fff; margin-bottom:12px; letter-spacing:-0.02em; }
+  .cta-card p{ color:#B4AFBC; font-size:16px; margin-bottom:24px; }
+  .cta-card a{ display:inline-block; font-weight:600; font-size:15px; color:#15141A; background:#fff; padding:14px 26px; border-radius:999px; margin:0 6px 10px; }
+  .cta-card a.secondary{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.25); }
+
+  @media (max-width:760px){
+    .article{ padding:48px 24px 64px; }
+    .article h1{ font-size:30px !important; }
+    .cta-card{ padding:32px 24px; }
+  }
+
+  .footer-inner{ max-width:1180px; margin:0 auto; padding:56px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media (max-width:560px){ .footer-inner{ flex-direction:column; text-align:center; padding:40px 24px; } }
+</style>
+</head>
+<body>
+
+<div style="overflow-x:hidden;">
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <nav class="nav-bar" style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(247,244,239,0.9);border-bottom:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true">
+          <div style="width:13px;height:13px;border-radius:50%;background:#F7F4EF;"></div>
+        </div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:34px;">
+        <a href="/#services" style="font-size:15px;font-weight:500;color:#3A3843;">Services</a>
+        <a href="/projects/" style="font-size:15px;font-weight:500;color:#3A3843;">Projects</a>
+        <a href="/blog/" style="font-size:15px;font-weight:700;color:#15141A;">Blog</a>
+        <a href="/#contact" class="btn-dark" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;color:#fff;background:#15141A;padding:10px 20px;border-radius:999px;">Start a project</a>
+      </div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span></label>
+    </div>
+  </nav>
+  <ul class="mobile-menu">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/#contact" class="mm-cta">Start a project →</a></li>
+  </ul>
+
+  <article class="article">
+    <span class="article-tag">Guide · Amazon Metadata Tagger</span>
+    <h1>How to Tag Amazon Synthetic-Performer XMP Metadata for Free</h1>
+    <div class="byline">By <a href="https://github.com/khooyc" target="_blank" rel="noopener">Khoo YC</a> · Spectra · Updated 17 August 2026</div>
+
+    <div class="quick-answer">
+      <span class="qa-label">Quick answer</span>
+      <p><a href="https://github.com/khooyc/amazon-adding-metadata-tag" target="_blank" rel="noopener"><strong>Amazon Metadata Tagger</strong></a> is a free, local Windows &amp; macOS app that adds the <code>contains-synthetic-performer</code> keyword to an image's XMP <code>dc:subject</code> field, then re-reads the file to confirm the tag is actually there — with a human reviewing every image before anything is marked verified. Nothing leaves your computer.</p>
+    </div>
+
+    <div class="warn-box">
+      <p><strong>Human verification required.</strong> This is an independent tool, not affiliated with or endorsed by Amazon. Always review your files and check Amazon's current listing requirements before uploading — "verified locally" means the tag was written and re-read successfully, not that Amazon has received or accepted the file.</p>
+    </div>
+
+    <p>If your listing images contain photorealistic AI-generated people, they may need to carry specific metadata identifying that before you upload them. Doing this by hand, file by file, across a real catalog is tedious and easy to get wrong. This tool turns it into a review queue: it scans a folder, shows you which images are untagged, and lets you approve or skip each one — nothing is tagged automatically without you looking at it.</p>
+
+    <h2>How the workflow works</h2>
+    <ol>
+      <li>Organize your images under <code>Media Library\Seller-SKU\...</code> folders.</li>
+      <li>Open the app, point it at that Media Library folder, and click <strong>Scan</strong>. Nothing runs in the background — it only scans when you ask.</li>
+      <li>Review the untagged images for one Seller SKU at a time. Click an image to select or deselect it, then choose <strong>Add tag &amp; verify</strong> or <strong>No tag needed</strong>.</li>
+      <li>Upload the prepared files to Seller Central yourself — the app never logs in to Amazon or claims an upload succeeded.</li>
+    </ol>
+    <p>Use <strong>Select visible</strong> for the current SKU, or <strong>Select all media</strong> across the whole queue. In <strong>Duplicates &amp; visual variants</strong>, mark a false match as <strong>Not a duplicate</strong> to remember that decision by content fingerprint — exact byte-for-byte duplicates can't be dismissed the same way.</p>
+
+    <h2>What "verified locally" actually means</h2>
+    <p>Before the first change to a file, the app creates a private local safety backup. It then appends the keyword — without touching any other subject tags — and reads <code>dc:subject</code> again. A file only counts as successful if that exact keyword is present after the re-read. Safety backups are eligible for manual cleanup after 30 days and are never deleted automatically.</p>
+
+    <h2>Privacy and safety</h2>
+    <ul>
+      <li>Your media, review decisions, backups, and app settings stay on your computer — no cloud or network AI integrations.</li>
+      <li>The app window itself has no direct filesystem access outside the folder you selected that session.</li>
+      <li>Images with existing valid tags are treated as already approved and skip the review queue.</li>
+      <li>File deletion goes through the Windows Recycle Bin or macOS Trash only.</li>
+    </ul>
+
+    <h2>Platforms and languages</h2>
+    <p>Windows and macOS, with English, Simplified Chinese, and Traditional Chinese interfaces, light/dark/auto theme, and a five-step quick-start tutorial for new users. Supported image formats: JPEG/JPG, PNG, TIFF/TIF, WebP. Videos show up under "Other files" for a manual watch-and-tag workflow.</p>
+    <p>The Mac build isn't Apple-notarized yet, so macOS will warn on first open — download the right <code>.dmg</code> for your chip (arm64 for Apple Silicon, x64 for Intel) from the <a href="https://github.com/khooyc/amazon-adding-metadata-tag/releases" target="_blank" rel="noopener">Releases page</a>, then Control-click the app in Applications and choose <strong>Open</strong> to approve it once.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>What does the tag actually do?</h3>
+      <p>It writes <code>contains-synthetic-performer</code> into the image's XMP <code>dc:subject</code> field, then re-reads the file to confirm the write worked before marking it verified.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does it upload to Amazon for me?</h3>
+      <p>No — it only prepares files locally. You upload the tagged files to Seller Central yourself.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my media sent anywhere?</h3>
+      <p>No. Everything runs on your computer, with no network or cloud AI integrations.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is this an official Amazon tool?</h3>
+      <p>No — it's independent and not affiliated with, sponsored by, or endorsed by Amazon. Always confirm against Amazon's current requirements before uploading.</p>
+    </div>
+
+    <div class="cta-card">
+      <h2>Get Amazon Metadata Tagger</h2>
+      <p>Free, local-first, human-reviewed. Download the latest release or read the full source.</p>
+      <a href="https://github.com/khooyc/amazon-adding-metadata-tag/releases" target="_blank" rel="noopener">Get the latest release</a>
+      <a href="https://github.com/khooyc/amazon-adding-metadata-tag" target="_blank" rel="noopener" class="secondary">View on GitHub</a>
+    </div>
+  </article>
+
+  <footer style="border-top:1px solid #E7E1D8;">
+    <div class="footer-inner">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:26px;height:26px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true"><div style="width:12px;height:12px;border-radius:50%;background:#F7F4EF;"></div></div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div style="text-align:center;">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#8A8692;">The full spectrum of digital. · © 2026 Spectra</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:#B4AFBC;margin-top:4px;">SSM Registered as Spectrality Enterprise — No. 202403201869 (IP0599248-P)</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
