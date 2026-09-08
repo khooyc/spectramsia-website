@@ -38,7 +38,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-html { overflow-x: hidden; max-width: 100%; }
+html { max-width: 100%; }
 body {
   margin: 0;
   background: var(--cream);
@@ -384,7 +384,7 @@ footer.site-footer { width: min(var(--content), calc(100% - 40px)); margin: 80px
 
 .spectra-menu-button, .spectra-sidebar-backdrop { display: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) { html { overflow-x: hidden; }
   .page-shell { display: block; }
   .spectra-sidebar {
     position: fixed;
