@@ -337,34 +337,80 @@ footer.site-footer { width: min(var(--content), calc(100% - 40px)); margin: 80px
   .final-cta { padding: 52px 26px; border-radius: 24px; }
 }
 
-/* ---------- Spectra brand mark (used in the side callout + footer) ---------- */
+/* ---------- Spectra brand mark (used in the top nav bar + footer) ---------- */
 .nav-bar-brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
-/* ---------- Spectra sidebar (links back to spectramsia.com) ---------- */
+.nav-bar-brand span:last-child { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+.nav-bar-dot {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: conic-gradient(from 210deg, #ff5d6c, #ffb443, #35c79a, #4c82f7, #a667f5, #ff5d6c);
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-bar-dot::after { content: ""; width: 13px; height: 13px; border-radius: 50%; background: var(--cream); }
+
+/* ---------- Spectra top navigation bar (links back to spectramsia.com) ---------- */
+.nav-toggle-input { display: none; }
+.nav-bar {
+  position: sticky; top: 0; z-index: 80;
+  background: rgba(247, 244, 239, 0.94);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-bar-inner {
+  max-width: 1180px; margin: 0 auto; padding: 16px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.nav-links { display: flex; align-items: center; gap: 34px; }
+.nav-links a:not(.button) { font-size: 15px; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+.nav-links a:not(.button):hover, .nav-links a:not(.button).is-active { color: var(--ink); }
+.nav-toggle-label {
+  display: none; width: 36px; height: 36px; align-items: center; justify-content: center;
+  cursor: pointer; border-radius: 8px; flex-shrink: 0;
+}
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+  content: ""; display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 2px;
+  position: relative; transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle-label span::before { position: absolute; top: -6px; }
+.nav-toggle-label span::after { position: absolute; top: 6px; }
+.mobile-menu { display: none; }
+
+@media (max-width: 860px) {
+  .nav-links { display: none !important; }
+  .nav-toggle-label { display: flex !important; }
+  .mobile-menu {
+    display: block; max-height: 0; overflow: hidden; list-style: none;
+    background: var(--white); border-top: 1px solid var(--line); transition: max-height 0.25s ease;
+  }
+  .mobile-menu li { border-bottom: 1px solid var(--line-soft); }
+  .mobile-menu a { display: block; padding: 14px 32px; font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; }
+  .mobile-menu .mm-cta { font-weight: 600; color: var(--purple); }
+  .nav-toggle-input:checked ~ .mobile-menu { max-height: 280px; }
+  .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span { background: transparent; }
+  .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::before { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::after { transform: translateY(-6px) rotate(-45deg); }
+}
+
+/* ---------- Page sidebar (Easy Open Amazon Review Request's own navigation — never Spectra links) ---------- */
 .page-shell { display: flex; align-items: flex-start; }
 .page-content { flex: 1; min-width: 0; }
 .spectra-sidebar-toggle-input { display: none; }
 
 .spectra-sidebar {
   position: sticky;
-  top: 0;
+  top: 75px;
   z-index: 40;
   flex-shrink: 0;
   width: 216px;
-  height: 100vh;
+  height: calc(100vh - 75px);
   padding: 26px 20px 20px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--line);
   background: var(--white);
 }
-.spectra-sidebar-brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
-.spectra-sidebar-brand span:last-child { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
-.spectra-sidebar-label {
-  margin: 44px 0 11px;
-  color: var(--muted-2);
-  font-family: 'Space Mono', monospace;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-}
+.spectra-sidebar-brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-bottom: 26px; }
+.spectra-sidebar-brand img { border-radius: 9px; flex-shrink: 0; }
+.spectra-sidebar-brand span:last-child { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 14px; line-height: 1.25; letter-spacing: -0.01em; }
 .spectra-sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
 .spectra-sidebar-nav a {
   padding: 9px 10px;
@@ -375,12 +421,10 @@ footer.site-footer { width: min(var(--content), calc(100% - 40px)); margin: 80px
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 .spectra-sidebar-nav a:hover, .spectra-sidebar-nav a:focus-visible, .spectra-sidebar-nav a.is-active {
-  border-left-color: var(--purple); color: var(--ink); background: var(--cream);
+  border-left-color: var(--amazon); color: var(--ink); background: var(--cream);
 }
 .spectra-sidebar-actions { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); }
 .spectra-sidebar-actions .button { width: 100%; }
-.spectra-sidebar-source { display: block; margin-top: 12px; color: var(--muted-2); font-size: 12px; font-weight: 600; text-decoration: none; text-align: center; }
-.spectra-sidebar-source:hover { color: var(--purple); }
 
 .spectra-menu-button, .spectra-sidebar-backdrop { display: none; }
 
@@ -404,11 +448,11 @@ footer.site-footer { width: min(var(--content), calc(100% - 40px)); margin: 80px
   }
   .spectra-sidebar-toggle-input:checked ~ .spectra-sidebar-backdrop { display: block; }
   .spectra-menu-button {
-    position: sticky;
-    top: 12px;
+    position: fixed;
+    top: 87px;
+    left: 12px;
     z-index: 50;
     width: fit-content;
-    margin: 12px 0 0 12px;
     display: flex; align-items: center; gap: 8px;
     padding: 9px 14px;
     border: 1px solid var(--line);
@@ -419,6 +463,8 @@ footer.site-footer { width: min(var(--content), calc(100% - 40px)); margin: 80px
     box-shadow: 0 8px 20px rgba(20, 16, 12, 0.08);
     color: var(--ink); font-size: 13px; font-weight: 700; cursor: pointer;
   }
+  .spectra-menu-button img { border-radius: 5px; }
+  .nav-toggle-input:checked ~ .page-shell .spectra-menu-button { display: none; }
 }
 
 /* ---------- Spectra footer row (links back to spectramsia.com) ---------- */
