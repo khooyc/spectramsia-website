@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Convert Amazon Data to Excel | Free Chrome Extension for Amazon Sellers</title>
+    <meta
+      name="description"
+      content="Convert Amazon Seller TXT, TSV, CSV, and FileV2 reports into styled Excel workbooks locally in Chrome. Free, private, and open source. Built by Spectra."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Khoo YC" />
+    <meta name="theme-color" content="#15141a" />
+    <link rel="canonical" href="https://www.spectramsia.com/projects/convert-amazon-data-to-excel/" />
+    <link rel="icon" href="assets/icon-128.png" />
+    <link rel="apple-touch-icon" href="assets/icon-128.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Spectra" />
+    <meta property="og:title" content="Convert Amazon Data to Excel" />
+    <meta
+      property="og:description"
+      content="A free Chrome extension that converts user-selected Amazon Seller text reports into organized Excel workbooks on your device."
+    />
+    <meta property="og:url" content="https://www.spectramsia.com/projects/convert-amazon-data-to-excel/" />
+    <meta property="og:image" content="https://www.spectramsia.com/projects/convert-amazon-data-to-excel/assets/social-preview.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Convert Amazon Data to Excel" />
+    <meta
+      name="twitter:description"
+      content="A free Chrome extension that converts user-selected Amazon Seller text reports into organized Excel workbooks on your device."
+    />
+
+    <!-- SoftwareApplication: the factual, machine-readable description of the extension itself.
+         Every field below matches the visible page copy — version, price, links, author. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://www.spectramsia.com/projects/convert-amazon-data-to-excel/#software",
+        "name": "Convert Amazon Data to Excel",
+        "description": "A Chrome extension that converts user-selected Amazon Seller TXT, TSV, CSV, and FileV2 text reports into styled XLSX workbooks locally. It does not sign in to Seller Central, read Seller Central pages, or download reports automatically.",
+        "url": "https://www.spectramsia.com/projects/convert-amazon-data-to-excel/",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Browser Extension",
+        "operatingSystem": "Google Chrome on Windows, macOS, ChromeOS, and Linux",
+        "softwareVersion": "1.0.1",
+        "isAccessibleForFree": true,
+        "dateModified": "2026-09-08",
+        "downloadUrl": "https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/latest/download/convert-amazon-data-to-excel-1.0.1.zip",
+        "installUrl": "https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/latest/download/convert-amazon-data-to-excel-1.0.1.zip",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Khoo YC",
+          "url": "https://github.com/khooyc"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Spectra",
+          "legalName": "Spectrality Enterprise",
+          "url": "https://www.spectramsia.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Puchong",
+            "addressRegion": "Selangor",
+            "addressCountry": "MY"
+          }
+        },
+        "codeRepository": "https://github.com/khooyc/amazon-txt-filev2-to-excel",
+        "sameAs": ["https://github.com/khooyc/amazon-txt-filev2-to-excel"]
+      }
+    </script>
+
+    <!-- BreadcrumbList: locates this project page inside the spectramsia.com site for search and AI-answer engines. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Spectra", "item": "https://www.spectramsia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.spectramsia.com/projects/" },
+          { "@type": "ListItem", "position": 3, "name": "Convert Amazon Data to Excel", "item": "https://www.spectramsia.com/projects/convert-amazon-data-to-excel/" }
+        ]
+      }
+    </script>
+
+    <!-- FAQPage: mirrors the visible FAQ section verbatim so answer engines can quote the extension's real, current behavior. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does it upload my Amazon report?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The selected report is read and converted locally in Chrome. Its contents are not transmitted to the developer or any third party."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which report formats are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The extension accepts TXT, TSV, CSV, and FileV2 text reports up to 25 MB. It detects tab, comma, and semicolon delimiters. Unusual or changed layouts may require adjustment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it connect to Amazon Seller Central?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It does not sign in, read Seller Central pages, access cookies, or download reports. Download the report yourself, then explicitly choose that local file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which report families can it recognize?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It recognizes common headers used by order, settlement, search-term, campaign, business, inventory, returns, and FBA-fee reports. Other tabular reports can still be converted as generic reports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are some values kept as text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Identifiers such as Amazon order IDs, ASINs, and SKUs should not be treated as quantities. Keeping them as text protects their exact appearance and helps prevent formula injection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Version 1.0.1 is free and open source. There are no accounts, advertisements, subscriptions, or in-app purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I report a problem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open a GitHub issue at github.com/khooyc/amazon-txt-filev2-to-excel/issues and describe the file format and expected result. Never attach real customer data, credentials, Seller Central exports, or other private information."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <nav class="nav-bar" aria-label="Spectra">
+      <div class="nav-bar-inner">
+        <a href="https://www.spectramsia.com/" class="nav-bar-brand">
+          <span class="nav-bar-dot" aria-hidden="true"></span>
+          <span>Spectra</span>
+        </a>
+        <div class="nav-links">
+          <a href="https://www.spectramsia.com/#services">Services</a>
+          <a href="https://www.spectramsia.com/#work">Work</a>
+          <a href="https://www.spectramsia.com/projects/" class="is-active">Projects</a>
+          <a href="https://www.spectramsia.com/blog/">Blog</a>
+          <a href="https://www.spectramsia.com/#contact" class="button button-small nav-cta-desktop">Start a project</a>
+        </div>
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Spectra menu"><span></span></label>
+      </div>
+    </nav>
+    <ul class="mobile-menu">
+      <li><a href="https://www.spectramsia.com/#services">Services</a></li>
+      <li><a href="https://www.spectramsia.com/#work">Work</a></li>
+      <li><a href="https://www.spectramsia.com/projects/" class="is-active">Projects</a></li>
+      <li><a href="https://www.spectramsia.com/blog/">Blog</a></li>
+      <li><a href="https://www.spectramsia.com/#contact" class="mm-cta">Start a project →</a></li>
+    </ul>
+
+    <div class="page-shell">
+      <aside class="spectra-sidebar" id="site-nav" aria-label="Article navigation">
+        <a class="spectra-sidebar-brand" href="#top" aria-label="Convert Amazon Data to Excel home">
+          <img src="assets/icon-128.png" alt="" width="34" height="34" />
+          <span>Convert Amazon Data to Excel</span>
+        </a>
+        <p class="spectra-sidebar-label">On this page</p>
+        <nav class="spectra-sidebar-nav" aria-label="On this page">
+          <a href="#top">Overview</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#install">Installation</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="spectra-sidebar-actions">
+          <a class="button button-small" href="https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/latest/download/convert-amazon-data-to-excel-1.0.1.zip">Download free ZIP</a>
+          <a class="spectra-sidebar-source" href="https://github.com/khooyc/amazon-txt-filev2-to-excel">View source on GitHub →</a>
+        </div>
+      </aside>
+      <button class="spectra-sidebar-backdrop" type="button" aria-hidden="true" tabindex="-1"></button>
+
+      <div class="page-content">
+        <button class="spectra-menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span>Contents</span><span class="menu-icon" aria-hidden="true">Menu</span>
+        </button>
+
+        <main id="main">
+          <section class="hero" id="top">
+            <div class="hero-copy">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Free Chrome extension</span>
+              <h1>Turn Amazon text reports into organized Excel workbooks.</h1>
+              <p class="hero-lede">A free Chrome extension for Amazon sellers. Choose a TXT, TSV, CSV, or FileV2 report and create a styled XLSX workbook locally—without a desktop app or server upload.</p>
+              <div class="button-row">
+                <a class="button" href="https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/latest/download/convert-amazon-data-to-excel-1.0.1.zip">Download free ZIP</a>
+                <a class="button button-secondary" href="https://github.com/khooyc/amazon-txt-filev2-to-excel">View on GitHub</a>
+              </div>
+              <p class="download-note">Version 1.0.1 · Chrome for Windows, Mac, ChromeOS, and Linux · Chrome Web Store review pending</p>
+            </div>
+            <button class="media-frame hero-media" type="button" data-lightbox="assets/screenshots/filev2-conversion.png" aria-label="Enlarge the FileV2 to Excel conversion example">
+              <img src="assets/screenshots/filev2-conversion.png" alt="FileV2 text data converted into an Excel worksheet" width="1280" height="800" />
+            </button>
+          </section>
+
+          <section class="problem-section" id="features" aria-labelledby="problem-heading">
+            <div class="section-heading center">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Features</span>
+              <h2 id="problem-heading">Raw reports should not slow down your analysis.</h2>
+            </div>
+            <div class="problem-list">
+              <article class="problem-card" style="--card-accent:var(--accent)">
+                <span class="icon-box" style="background:var(--accent-tint); color:var(--accent-dark)">1</span>
+                <h3>What files can I convert?</h3>
+                <p>Choose a TXT, TSV, CSV, or FileV2 text report up to 25 MB. The extension detects tab, comma, and semicolon delimiters.</p>
+              </article>
+              <article class="problem-card" style="--card-accent:var(--green)">
+                <span class="icon-box" style="background:var(--green-tint); color:#1f9c78">2</span>
+                <h3>Will identifiers stay intact?</h3>
+                <p>Order IDs, ASINs, SKUs, and similar identifiers remain text so Excel does not turn them into unwanted numbers or formulas.</p>
+              </article>
+              <article class="problem-card" style="--card-accent:var(--orange)">
+                <span class="icon-box" style="background:var(--orange-tint); color:#b8790a">3</span>
+                <h3>What does the workbook contain?</h3>
+                <p>You get a Summary sheet and a styled Data sheet with filters, a frozen header, readable widths, row shading, and number formats.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="workflow" id="how-it-works" aria-labelledby="workflow-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How it works</span>
+              <h2 id="workflow-heading">Three steps from report file to Excel</h2>
+              <p>No account, website access, or desktop installer is required.</p>
+            </div>
+
+            <article class="workflow-row">
+              <div class="workflow-copy">
+                <span class="step-label">Step 1</span>
+                <h3>Choose a report from your device</h3>
+                <p>Open the extension and select or drop a supported report. Chrome gives the extension access only to the file you explicitly choose.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/simple-workflow.png" aria-label="Enlarge the three-step conversion workflow">
+                <img src="assets/screenshots/simple-workflow.png" alt="Choose, convert, and open in Excel workflow" width="1280" height="800" />
+              </button>
+            </article>
+
+            <article class="workflow-row workflow-row-reverse">
+              <div class="workflow-copy">
+                <span class="step-label">Step 2</span>
+                <h3>Convert locally in Chrome</h3>
+                <p>The extension finds the table, handles FileV2 metadata, protects formula-like text, and builds the XLSX package entirely in browser memory.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/filev2-conversion.png" aria-label="Enlarge the FileV2 input and Excel output example">
+                <img src="assets/screenshots/filev2-conversion.png" alt="FileV2 input beside formatted Excel output" width="1280" height="800" />
+              </button>
+            </article>
+
+            <article class="workflow-row">
+              <div class="workflow-copy">
+                <span class="step-label">Step 3</span>
+                <h3>Open the downloaded workbook</h3>
+                <p>Chrome saves a file ending in <code>_formatted.xlsx</code>. Open it in Excel or another compatible spreadsheet application and begin your analysis.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/free-efficient.png" aria-label="Enlarge the supported output overview">
+                <img src="assets/screenshots/free-efficient.png" alt="Free TXT and FileV2 conversion to Excel-ready output" width="1280" height="800" />
+              </button>
+            </article>
+          </section>
+
+          <section class="privacy-band" id="privacy" aria-labelledby="privacy-heading">
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Privacy</span>
+              <h2 id="privacy-heading">Your report stays on your device</h2>
+              <p>The selected file is processed locally. The extension does not transmit report contents, connect to Seller Central, use analytics, or make external network requests.</p>
+              <a href="https://khooyc.github.io/amazon-txt-filev2-to-excel/privacy.html" target="_blank" rel="noopener">Read the full privacy policy →</a>
+            </div>
+            <ul class="trust-list">
+              <li><strong>No uploads</strong><span>Report contents never go to a developer server.</span></li>
+              <li><strong>No permissions</strong><span>No website, history, cookie, or account access.</span></li>
+              <li><strong>No tracking</strong><span>No analytics, advertising, or remote code.</span></li>
+            </ul>
+          </section>
+
+          <section class="control-section" aria-labelledby="format-heading">
+            <button class="media-frame" type="button" data-lightbox="assets/screenshots/filev2-conversion.png" aria-label="Enlarge the formatted workbook example">
+              <img src="assets/screenshots/filev2-conversion.png" alt="Example of structured Amazon report rows in a readable workbook" width="1280" height="800" />
+            </button>
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>You're in control</span>
+              <h2 id="format-heading">Useful formatting without changing your data</h2>
+              <p>The converter recognizes common report headers and applies presentation that makes large tables easier to scan while keeping identifiers safe.</p>
+              <ul class="check-list">
+                <li>Summary and Data worksheets</li>
+                <li>Frozen header row and filters</li>
+                <li>Readable widths and alternating row shading</li>
+                <li>Currency, percentage, and numeric formats</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="install-section" id="install" aria-labelledby="install-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Installation</span>
+              <h2 id="install-heading">How do I install it?</h2>
+              <p>The Chrome Web Store submission is currently pending review. Until it is approved, use the release ZIP for local installation.</p>
+            </div>
+            <ol class="install-steps">
+              <li><span class="install-number" aria-hidden="true">1</span><strong>Download the ZIP.</strong><span>Use the orange download button on this page.</span></li>
+              <li><span class="install-number" aria-hidden="true">2</span><strong>Extract the ZIP.</strong><span>Use Extract All on Windows or open it on Mac.</span></li>
+              <li><span class="install-number" aria-hidden="true">3</span><strong>Open Chrome extensions.</strong><span>Enter <code>chrome://extensions</code> in the address bar.</span></li>
+              <li><span class="install-number" aria-hidden="true">4</span><strong>Enable Developer mode.</strong><span>Use the switch in the upper-right corner.</span></li>
+              <li><span class="install-number" aria-hidden="true">5</span><strong>Choose Load unpacked.</strong><span>Select the extracted folder containing <code>manifest.json</code>.</span></li>
+            </ol>
+            <p class="install-help">For source code and release checksums, <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel">visit the GitHub repository.</a></p>
+          </section>
+
+          <section class="trust-section" aria-labelledby="trust-heading">
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Built to be checked</span>
+              <h2 id="trust-heading">Built around one clear purpose</h2>
+              <p>This page describes the real version 1.0.1 behavior. The extension converts a file you select; it does not sign in to Amazon, browse Seller Central pages, or download reports automatically.</p>
+              <dl class="facts">
+                <div><dt>Maintainer</dt><dd><a href="https://github.com/khooyc">Khoo YC</a></dd></div>
+                <div><dt>Published by</dt><dd><a href="https://www.spectramsia.com/">Spectra (Spectrality Enterprise)</a></dd></div>
+                <div><dt>Source</dt><dd><a href="https://github.com/khooyc/amazon-txt-filev2-to-excel">Public on GitHub</a></dd></div>
+                <div><dt>Current release</dt><dd><a href="https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/tag/v1.0.1">Version 1.0.1</a></dd></div>
+                <div><dt>Web Store ID</dt><dd><code>ioampmgbfpeihocjhhdfjmkejbbedkoh</code></dd></div>
+              </dl>
+            </div>
+            <button class="media-frame" type="button" data-lightbox="assets/screenshots/simple-workflow.png" aria-label="Enlarge the local conversion workflow">
+              <img src="assets/screenshots/simple-workflow.png" alt="Simple local report conversion workflow" width="1280" height="800" />
+            </button>
+          </section>
+
+          <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>FAQ</span>
+              <h2 id="faq-heading">Questions Amazon sellers ask</h2>
+              <p>Clear answers about what the converter does—and what it does not do.</p>
+            </div>
+            <div class="faq-list">
+              <details open>
+                <summary>Does it upload my Amazon report?</summary>
+                <p>No. The selected report is read and converted locally in Chrome. Its contents are not transmitted to the developer or any third party.</p>
+              </details>
+              <details>
+                <summary>Which report formats are supported?</summary>
+                <p>The extension accepts TXT, TSV, CSV, and FileV2 text reports up to 25 MB. It detects tab, comma, and semicolon delimiters. Unusual or changed layouts may require adjustment.</p>
+              </details>
+              <details>
+                <summary>Does it connect to Amazon Seller Central?</summary>
+                <p>No. It does not sign in, read Seller Central pages, access cookies, or download reports. Download the report yourself, then explicitly choose that local file.</p>
+              </details>
+              <details>
+                <summary>Which report families can it recognize?</summary>
+                <p>It recognizes common headers used by order, settlement, search-term, campaign, business, inventory, returns, and FBA-fee reports. Other tabular reports can still be converted as generic reports.</p>
+              </details>
+              <details>
+                <summary>Why are some values kept as text?</summary>
+                <p>Identifiers such as Amazon order IDs, ASINs, and SKUs should not be treated as quantities. Keeping them as text protects their exact appearance and helps prevent formula injection.</p>
+              </details>
+              <details>
+                <summary>Is it free?</summary>
+                <p>Yes. Version 1.0.1 is free and open source. There are no accounts, advertisements, subscriptions, or in-app purchases.</p>
+              </details>
+              <details>
+                <summary>How can I report a problem?</summary>
+                <p>Open a <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel/issues">GitHub issue</a> and describe the file format and expected result. Never attach real customer data, credentials, Seller Central exports, or other private information.</p>
+              </details>
+            </div>
+          </section>
+
+          <div class="final-cta-wrap">
+            <section class="final-cta" aria-labelledby="cta-heading">
+              <h2 id="cta-heading">Make downloaded Amazon reports easier to work with</h2>
+              <p>Convert the report locally, open the formatted workbook, and move on to the analysis that matters.</p>
+              <div class="button-row centered">
+                <a class="button" href="https://github.com/khooyc/amazon-txt-filev2-to-excel/releases/latest/download/convert-amazon-data-to-excel-1.0.1.zip">Download free ZIP</a>
+                <a class="button button-secondary" href="https://github.com/khooyc/amazon-txt-filev2-to-excel">View the source</a>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <div class="product-footer">
+          <div class="product-footer-inner">
+            <a class="product-footer-brand" href="#top" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;">
+              <img src="assets/icon-128.png" alt="" width="30" height="30" style="border-radius:8px;" />
+              <span>Convert Amazon Data to Excel</span>
+            </a>
+            <div class="product-footer-links">
+              <a href="https://khooyc.github.io/amazon-txt-filev2-to-excel/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+              <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel">GitHub</a>
+              <a href="https://github.com/khooyc/amazon-txt-filev2-to-excel/issues">Support</a>
+            </div>
+          </div>
+          <p class="product-footer-note">Amazon and Seller Central are trademarks of Amazon.com, Inc. or its affiliates. Independent productivity tool; not affiliated with, sponsored by, or endorsed by Amazon.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer" style="width:min(1180px, calc(100% - 40px));margin:0 auto;padding:24px 0 56px;">
+      <div class="footer-inner spectra-row" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px 40px;padding-bottom:26px;border-bottom:1px solid var(--line);">
+        <a href="https://www.spectramsia.com/" class="nav-bar-brand">
+          <span class="nav-bar-dot" aria-hidden="true"></span>
+          <span>Spectra</span>
+        </a>
+        <span class="spectra-tagline" style="font-family:'Space Mono', monospace;font-size:12px;letter-spacing:0.08em;color:var(--muted-2);">The full spectrum of digital. · Back to spectramsia.com</span>
+      </div>
+    </footer>
+
+    <dialog class="lightbox" aria-label="Screenshot preview">
+      <button type="button" class="lightbox-close" aria-label="Close screenshot">×</button>
+      <img src="" alt="Enlarged extension screenshot" />
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
