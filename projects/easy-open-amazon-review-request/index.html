@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easy Open Amazon Review Request | Free Chrome Extension for Amazon Sellers</title>
+    <meta
+      name="description"
+      content="Open Amazon Seller Central order pages in separate tabs and find the Request a Review control faster. Free, local-only, open-source Chrome extension for Amazon sellers, built by Spectra."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Khoo YC" />
+    <meta name="theme-color" content="#15141a" />
+    <link rel="canonical" href="https://www.spectramsia.com/projects/easy-open-amazon-review-request/" />
+    <link rel="icon" href="assets/icon-128.png" />
+    <link rel="apple-touch-icon" href="assets/icon-128.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Spectra" />
+    <meta property="og:title" content="Easy Open Amazon Review Request" />
+    <meta
+      property="og:description"
+      content="A free Chrome extension that helps Amazon sellers open order pages and find Request a Review faster."
+    />
+    <meta property="og:url" content="https://www.spectramsia.com/projects/easy-open-amazon-review-request/" />
+    <meta property="og:image" content="https://www.spectramsia.com/projects/easy-open-amazon-review-request/assets/social-preview.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Easy Open Amazon Review Request" />
+    <meta
+      name="twitter:description"
+      content="A free Chrome extension that helps Amazon sellers open order pages and find Request a Review faster."
+    />
+
+    <!-- SoftwareApplication: the factual, machine-readable description of the extension itself.
+         Every field below matches the visible page copy — version, price, links, author. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://www.spectramsia.com/projects/easy-open-amazon-review-request/#software",
+        "name": "Easy Open Amazon Review Request",
+        "description": "A Chrome extension that helps Amazon sellers open Seller Central order pages in separate tabs and locate the Request a Review control. It does not send review requests or messages automatically.",
+        "url": "https://www.spectramsia.com/projects/easy-open-amazon-review-request/",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Browser Extension",
+        "operatingSystem": "Google Chrome on Windows, macOS, and Linux",
+        "softwareVersion": "0.1.0",
+        "isAccessibleForFree": true,
+        "dateModified": "2026-09-08",
+        "downloadUrl": "https://github.com/khooyc/easy-open-amazon-review-request/releases/latest/download/easy-open-amazon-review-request-0.1.0.zip",
+        "installUrl": "https://github.com/khooyc/easy-open-amazon-review-request/releases/latest/download/easy-open-amazon-review-request-0.1.0.zip",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Khoo YC",
+          "url": "https://github.com/khooyc"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Spectra",
+          "legalName": "Spectrality Enterprise",
+          "url": "https://www.spectramsia.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Puchong",
+            "addressRegion": "Selangor",
+            "addressCountry": "MY"
+          }
+        },
+        "codeRepository": "https://github.com/khooyc/easy-open-amazon-review-request",
+        "sameAs": ["https://github.com/khooyc/easy-open-amazon-review-request"]
+      }
+    </script>
+
+    <!-- BreadcrumbList: locates this project page inside the spectramsia.com site for search and AI-answer engines. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Spectra", "item": "https://www.spectramsia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.spectramsia.com/projects/" },
+          { "@type": "ListItem", "position": 3, "name": "Easy Open Amazon Review Request", "item": "https://www.spectramsia.com/projects/easy-open-amazon-review-request/" }
+        ]
+      }
+    </script>
+
+    <!-- FAQPage: mirrors the visible FAQ section verbatim so answer engines (Google AI Overviews,
+         Perplexity, ChatGPT search, etc.) can quote the extension's real, current behavior. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does it send review requests automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. If Amazon presents Request a Review as a button, the extension scrolls to it and highlights it. You inspect the order and click the button yourself. It never sends a customer message automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Amazon Seller Central pages does it work on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start on a Seller Central order list or Manage Orders page that contains order-detail links. It supports common Seller Central marketplaces listed in the extension manifest. Amazon can change its pages, so a future update may sometimes be needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it upload my order data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The extension processes the current page inside Chrome. It does not send page content, order identifiers, URLs, or settings to the developer, analytics providers, or advertising services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I control how many tabs open?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can set a maximum from 1 to 100 tabs and choose a delay from 0 to 5,000 milliseconds between tabs. Begin with a small number while learning the workflow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the extension free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Version 0.1.0 is free, dependency-free, and open source on GitHub. There are no in-app purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will it work for every order?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No tool can make an ineligible order eligible. Amazon decides when Request a Review is available. This extension only helps you navigate the existing Seller Central workflow more quickly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I report a problem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open a GitHub issue at github.com/khooyc/easy-open-amazon-review-request/issues. Describe the Seller Central marketplace, the page you used, what you expected, and what happened. Never include customer names, addresses, order details, passwords, or private account information."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Easy Open Amazon Review Request home">
+        <img src="assets/icon-128.png" alt="" width="42" height="42" />
+        <span>Easy Open Amazon Review Request</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a class="button button-small" href="https://github.com/khooyc/easy-open-amazon-review-request/releases/latest/download/easy-open-amazon-review-request-0.1.0.zip">Download free</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Free Chrome extension</span>
+          <h1>Open Amazon order pages. Find Request a Review faster.</h1>
+          <p class="hero-lede">A free Chrome extension for Amazon sellers that turns the order list already on screen into review-ready tabs—without sending any customer message for you.</p>
+          <div class="button-row">
+            <a class="button" href="https://github.com/khooyc/easy-open-amazon-review-request/releases/latest/download/easy-open-amazon-review-request-0.1.0.zip">Download free ZIP</a>
+            <a class="button button-secondary" href="https://github.com/khooyc/easy-open-amazon-review-request">View on GitHub</a>
+          </div>
+          <p class="download-note">Version 0.1.0 · Chrome for Windows, Mac, and Linux · Chrome Web Store review pending</p>
+          <div class="hero-ticker">
+            <span>Scan</span><span>Open</span><span>Review URL</span><span>No auto-send</span>
+          </div>
+        </div>
+        <button class="media-frame hero-media" type="button" data-lightbox="assets/screenshots/scan-orders.png" aria-label="Enlarge screenshot showing the extension scanning an Amazon Seller Central order page">
+          <img src="assets/screenshots/scan-orders.png" alt="Easy Open Amazon Review Request scanning the currently loaded Seller Central order list" width="1280" height="800" />
+        </button>
+      </section>
+
+      <section class="problem-section" aria-labelledby="problem-heading">
+        <div class="section-heading center">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>The problem</span>
+          <h2 id="problem-heading">Too much clicking between orders?</h2>
+        </div>
+        <div class="problem-list">
+          <article class="problem-card" style="--card-accent:var(--amazon)">
+            <span class="icon-box" style="background:var(--amazon-tint); color:var(--amazon-dark)">1</span>
+            <h3>How do I scan the order list?</h3>
+            <p>Open Manage Orders, load the rows you need, and press Scan. The extension looks for order-detail links already visible on that page.</p>
+          </article>
+          <article class="problem-card" style="--card-accent:var(--blue)">
+            <span class="icon-box" style="background:var(--blue-tint); color:var(--blue)">2</span>
+            <h3>Can I open many order pages?</h3>
+            <p>Yes. Open detected orders in separate background tabs and choose a delay so Chrome does not receive every new tab at once.</p>
+          </article>
+          <article class="problem-card" style="--card-accent:var(--green)">
+            <span class="icon-box" style="background:var(--green-tint); color:var(--green)">3</span>
+            <h3>Where is Request a Review?</h3>
+            <p>The extension follows a direct review URL when Amazon provides one. Otherwise, it scrolls to and highlights the button for your manual click.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow" id="how-it-works" aria-labelledby="workflow-heading">
+        <div class="section-heading">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How it works</span>
+          <h2 id="workflow-heading">Three steps from order list to review-ready tabs</h2>
+          <p>It never sends a customer message automatically.</p>
+        </div>
+
+        <article class="workflow-row">
+          <div class="workflow-copy">
+            <span class="step-label">Step 1</span>
+            <h3>Scan the page already on screen</h3>
+            <p>The extension reads the current Seller Central page only after you open it. It detects supported order-detail links from the rows that are already loaded.</p>
+          </div>
+          <button class="media-frame" type="button" data-lightbox="assets/screenshots/scan-orders.png" aria-label="Enlarge the scan current order page screenshot">
+            <img src="assets/screenshots/scan-orders.png" alt="Scan current Amazon Seller Central order page workflow" width="1280" height="800" />
+          </button>
+        </article>
+
+        <article class="workflow-row workflow-row-reverse">
+          <div class="workflow-copy">
+            <span class="step-label">Step 2</span>
+            <h3>Open the order pages you choose</h3>
+            <p>Press Open order tabs to launch detected pages in the background. Set a maximum tab count and a delay that feels comfortable for your computer.</p>
+          </div>
+          <button class="media-frame" type="button" data-lightbox="assets/screenshots/open-order-tabs.png" aria-label="Enlarge the open multiple order pages screenshot">
+            <img src="assets/screenshots/open-order-tabs.png" alt="Opening multiple Amazon order pages in background tabs" width="1280" height="800" />
+          </button>
+        </article>
+
+        <article class="workflow-row">
+          <div class="workflow-copy">
+            <span class="step-label">Step 3</span>
+            <h3>Find the review control, then decide</h3>
+            <p>When Amazon exposes a direct Request a Review URL, the matching order tab can navigate to it. Button-only controls are brought into view and highlighted, leaving the final action with you.</p>
+          </div>
+          <button class="media-frame" type="button" data-lightbox="assets/screenshots/find-review-urls.png" aria-label="Enlarge the detected review URLs screenshot">
+            <img src="assets/screenshots/find-review-urls.png" alt="Detected Request a Review URLs in Seller Central" width="1280" height="800" />
+          </button>
+        </article>
+      </section>
+
+      <section class="privacy-band" id="privacy" aria-labelledby="privacy-heading">
+        <div>
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Privacy</span>
+          <h2 id="privacy-heading">Your Seller Central data stays in your browser</h2>
+          <p>The source is public, the behavior is documented, and the extension does not send Seller Central page content to the developer.</p>
+          <a href="https://github.com/khooyc/easy-open-amazon-review-request/blob/main/PRIVACY_POLICY.md">Read the full privacy policy →</a>
+        </div>
+        <ul class="trust-list">
+          <li><strong>No analytics</strong><span>No tracking or advertising service.</span></li>
+          <li><strong>No external service</strong><span>Order data is processed locally.</span></li>
+          <li><strong>Settings saved locally</strong><span>Your delay and tab limit stay on your device.</span></li>
+        </ul>
+      </section>
+
+      <div class="proof-wrap" aria-label="Extension facts at a glance">
+        <div class="proof-box">
+          <div class="proof-grid">
+            <div><div class="proof-num">100</div><div class="proof-label">Maximum tabs allowed per run</div></div>
+            <div><div class="proof-num">0</div><div class="proof-label">Analytics or tracking services used</div></div>
+            <div><div class="proof-num">3</div><div class="proof-label">Steps: scan, open, review</div></div>
+            <div><div class="proof-num">Free</div><div class="proof-label">Open source, no in-app purchases</div></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="control-section" aria-labelledby="control-heading">
+        <button class="media-frame" type="button" data-lightbox="assets/screenshots/tab-settings.png" aria-label="Enlarge the extension tab settings screenshot">
+          <img src="assets/screenshots/tab-settings.png" alt="Delay between tabs and maximum tabs settings" width="1280" height="800" />
+        </button>
+        <div>
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>You're in control</span>
+          <h2 id="control-heading">You control the pace</h2>
+          <p>Start small. Pick how long the extension waits between tabs and set the largest number it may open in one run. The allowed maximum is 100 tabs, but most people should begin with far fewer.</p>
+          <ul class="check-list">
+            <li>Works only when you choose to run it</li>
+            <li>Scans only the currently loaded page</li>
+            <li>Keeps button-only review actions manual</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="install-section" id="install" aria-labelledby="install-heading">
+        <div class="section-heading">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Installation</span>
+          <h2 id="install-heading">How do I install it?</h2>
+          <p>The Chrome Web Store listing is waiting for review. For now, use the manual ZIP installation.</p>
+        </div>
+        <ol class="install-steps">
+          <li><span class="install-number" aria-hidden="true">1</span><strong>Download the ZIP.</strong><span>Use the orange download button on this page.</span></li>
+          <li><span class="install-number" aria-hidden="true">2</span><strong>Extract the ZIP.</strong><span>On Windows choose Extract All. On Mac double-click the ZIP.</span></li>
+          <li><span class="install-number" aria-hidden="true">3</span><strong>Open Chrome extensions.</strong><span>Type <code>chrome://extensions</code> in the address bar.</span></li>
+          <li><span class="install-number" aria-hidden="true">4</span><strong>Turn on Developer mode.</strong><span>Use the switch in the top-right corner.</span></li>
+          <li><span class="install-number" aria-hidden="true">5</span><strong>Choose Load unpacked.</strong><span>Select the extracted folder that directly contains <code>manifest.json</code>.</span></li>
+        </ol>
+        <p class="install-help">Need pictures and separate Windows/Mac instructions? <a href="https://github.com/khooyc/easy-open-amazon-review-request#install-it-on-windows">Read the beginner guide on GitHub →</a></p>
+      </section>
+
+      <section class="trust-section" aria-labelledby="trust-heading">
+        <div>
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Built to be checked</span>
+          <h2 id="trust-heading">Built for a careful seller workflow</h2>
+          <p>This page shows the real extension screens and describes the actual version 0.1.0 behavior. The source code, releases, privacy policy, and issue history are public so you can inspect how the tool works.</p>
+          <dl class="facts">
+            <div><dt>Maintainer</dt><dd><a href="https://github.com/khooyc">Khoo YC</a></dd></div>
+            <div><dt>Published by</dt><dd><a href="https://www.spectramsia.com/">Spectra (Spectrality Enterprise)</a></dd></div>
+            <div><dt>Source</dt><dd><a href="https://github.com/khooyc/easy-open-amazon-review-request">Public on GitHub</a></dd></div>
+            <div><dt>Current release</dt><dd><a href="https://github.com/khooyc/easy-open-amazon-review-request/releases/tag/v0.1.0">Version 0.1.0</a></dd></div>
+            <div><dt>Page verified</dt><dd>September 8, 2026</dd></div>
+          </dl>
+        </div>
+        <button class="media-frame" type="button" data-lightbox="assets/screenshots/seller-workflow.png" aria-label="Enlarge the lightweight seller workflow screenshot">
+          <img src="assets/screenshots/seller-workflow.png" alt="Lightweight review request workflow for Amazon sellers" width="1280" height="800" />
+        </button>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="section-heading">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>FAQ</span>
+          <h2 id="faq-heading">Questions Amazon sellers ask</h2>
+          <p>Straight answers about what the extension can—and cannot—do.</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Does it send review requests automatically?</summary>
+            <p>No. If Amazon presents Request a Review as a button, the extension scrolls to it and highlights it. You inspect the order and click the button yourself. It never sends a customer message automatically.</p>
+          </details>
+          <details>
+            <summary>Which Amazon Seller Central pages does it work on?</summary>
+            <p>Start on a Seller Central order list or Manage Orders page that contains order-detail links. It supports common Seller Central marketplaces listed in the extension manifest. Amazon can change its pages, so a future update may sometimes be needed.</p>
+          </details>
+          <details>
+            <summary>Does it upload my order data?</summary>
+            <p>No. The extension processes the current page inside Chrome. It does not send page content, order identifiers, URLs, or settings to the developer, analytics providers, or advertising services.</p>
+          </details>
+          <details>
+            <summary>Can I control how many tabs open?</summary>
+            <p>Yes. You can set a maximum from 1 to 100 tabs and choose a delay from 0 to 5,000 milliseconds between tabs. Begin with a small number while learning the workflow.</p>
+          </details>
+          <details>
+            <summary>Is the extension free?</summary>
+            <p>Yes. Version 0.1.0 is free, dependency-free, and open source on GitHub. There are no in-app purchases.</p>
+          </details>
+          <details>
+            <summary>Will it work for every order?</summary>
+            <p>No tool can make an ineligible order eligible. Amazon decides when Request a Review is available. This extension only helps you navigate the existing Seller Central workflow more quickly.</p>
+          </details>
+          <details>
+            <summary>How can I report a problem?</summary>
+            <p>Open a <a href="https://github.com/khooyc/easy-open-amazon-review-request/issues">GitHub issue</a>. Describe the Seller Central marketplace, the page you used, what you expected, and what happened. Never include customer names, addresses, order details, passwords, or private account information.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="final-cta-wrap">
+        <section class="final-cta" aria-labelledby="cta-heading">
+          <h2 id="cta-heading">Spend less time opening orders one by one</h2>
+          <p>Download the free extension, start with a small tab limit, and keep every final review action under your control.</p>
+          <div class="button-row centered">
+            <a class="button" href="https://github.com/khooyc/easy-open-amazon-review-request/releases/latest/download/easy-open-amazon-review-request-0.1.0.zip">Download free ZIP</a>
+            <a class="button button-secondary" href="https://github.com/khooyc/easy-open-amazon-review-request">View the source</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="#top">
+          <img src="assets/icon-128.png" alt="" width="34" height="34" />
+          <span>Easy Open Amazon Review Request</span>
+        </a>
+        <div class="footer-links">
+          <a href="https://github.com/khooyc/easy-open-amazon-review-request/blob/main/PRIVACY_POLICY.md">Privacy Policy</a>
+          <a href="https://github.com/khooyc/easy-open-amazon-review-request">GitHub</a>
+          <a href="https://github.com/khooyc/easy-open-amazon-review-request/issues">Support</a>
+          <a href="https://www.spectramsia.com/">Spectra</a>
+        </div>
+      </div>
+      <p class="footer-note">Independent productivity tool. Not affiliated with, sponsored by, or endorsed by Amazon. A free project by Spectra (Spectrality Enterprise, SSM 202403201869), Puchong, Selangor.</p>
+    </footer>
+
+    <dialog class="lightbox" aria-label="Screenshot preview">
+      <button type="button" class="lightbox-close" aria-label="Close screenshot">×</button>
+      <img src="" alt="Enlarged extension screenshot" />
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
