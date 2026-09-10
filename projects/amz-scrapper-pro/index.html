@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AMZ Scrapper Pro | Free Chrome Extension for Amazon Product Research</title>
+    <meta
+      name="description"
+      content="AMZ Scrapper Pro is a free, open-source Chrome extension that extracts Amazon product data — prices, ASINs, ratings, BSR, variants — and exports it to Excel or CSV in one click. Built by Spectra."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Khoo YC" />
+    <meta name="theme-color" content="#15141a" />
+    <link rel="canonical" href="https://www.spectramsia.com/projects/amz-scrapper-pro/" />
+    <link rel="icon" href="assets/icon-128.png" />
+    <link rel="apple-touch-icon" href="assets/icon-128.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Spectra" />
+    <meta property="og:title" content="AMZ Scrapper Pro" />
+    <meta
+      property="og:description"
+      content="Select the Amazon products you care about, extract prices, ASINs, ratings, BSR, variants and more, then download a clean Excel or CSV file in one click."
+    />
+    <meta property="og:url" content="https://www.spectramsia.com/projects/amz-scrapper-pro/" />
+    <meta property="og:image" content="https://www.spectramsia.com/projects/amz-scrapper-pro/assets/social-preview.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AMZ Scrapper Pro" />
+    <meta
+      name="twitter:description"
+      content="A free Chrome extension that extracts Amazon product data and exports it to Excel or CSV — no account, no manual copy-paste."
+    />
+
+    <!-- SoftwareApplication: the factual, machine-readable description of the extension itself.
+         Every field below matches the visible page copy — version, price, links, author. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://www.spectramsia.com/projects/amz-scrapper-pro/#software",
+        "name": "AMZ Scrapper Pro",
+        "description": "A Chrome extension that extracts Amazon product data — prices, ASINs, brand, ratings, reviews, BSR, variants, dimensions, and release dates — from search and product pages, with one-click export to Excel or CSV. It does not sign in to Amazon or transmit scraped data to a server.",
+        "url": "https://www.spectramsia.com/projects/amz-scrapper-pro/",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Browser Extension",
+        "operatingSystem": "Google Chrome, Microsoft Edge, and Brave on Windows, macOS, and Linux",
+        "softwareVersion": "2.1",
+        "isAccessibleForFree": true,
+        "dateModified": "2026-09-08",
+        "downloadUrl": "https://github.com/khooyc/amazon-data-scrapper-pro/archive/refs/heads/master.zip",
+        "installUrl": "https://github.com/khooyc/amazon-data-scrapper-pro/archive/refs/heads/master.zip",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Khoo YC",
+          "url": "https://github.com/khooyc"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Spectra",
+          "legalName": "Spectrality Enterprise",
+          "url": "https://www.spectramsia.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Puchong",
+            "addressRegion": "Selangor",
+            "addressCountry": "MY"
+          }
+        },
+        "codeRepository": "https://github.com/khooyc/amazon-data-scrapper-pro",
+        "sameAs": ["https://github.com/khooyc/amazon-data-scrapper-pro", "https://khooyc.github.io/amazon-data-scrapper-pro/"]
+      }
+    </script>
+
+    <!-- BreadcrumbList: locates this project page inside the spectramsia.com site for search and AI-answer engines. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Spectra", "item": "https://www.spectramsia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.spectramsia.com/projects/" },
+          { "@type": "ListItem", "position": 3, "name": "AMZ Scrapper Pro", "item": "https://www.spectramsia.com/projects/amz-scrapper-pro/" }
+        ]
+      }
+    </script>
+
+    <!-- FAQPage: mirrors the visible FAQ section verbatim so answer engines can quote the extension's real, current behavior. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which Amazon sites are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Amazon US, UK, Germany, France, Spain, Italy, Canada and Australia are included in version 2.1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on search results and product pages?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. On search pages you can choose multiple products; on product pages the extension can inspect the current listing and its available variants."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What can I export?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can download a formatted Excel workbook or a UTF-8 CSV file. A copy-to-clipboard option is also available."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it affiliated with Amazon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. AMZ Scrapper Pro is an independent productivity tool and is not affiliated with, sponsored by, or endorsed by Amazon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is automated extraction always permitted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You are responsible for using the extension in accordance with Amazon's Conditions of Use and any laws or policies that apply in your jurisdiction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I report a problem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open a GitHub issue with steps to reproduce it. Never include account credentials, customer information, or other private data."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <nav class="nav-bar" aria-label="Spectra">
+      <div class="nav-bar-inner">
+        <a href="https://www.spectramsia.com/" class="nav-bar-brand">
+          <span class="nav-bar-dot" aria-hidden="true"></span>
+          <span>Spectra</span>
+        </a>
+        <div class="nav-links">
+          <a href="https://www.spectramsia.com/#services">Services</a>
+          <a href="https://www.spectramsia.com/#work">Work</a>
+          <a href="https://www.spectramsia.com/projects/" class="is-active">Projects</a>
+          <a href="https://www.spectramsia.com/blog/">Blog</a>
+          <a href="https://www.spectramsia.com/#contact" class="button button-small nav-cta-desktop">Start a project</a>
+        </div>
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Spectra menu"><span></span></label>
+      </div>
+    </nav>
+    <ul class="mobile-menu">
+      <li><a href="https://www.spectramsia.com/#services">Services</a></li>
+      <li><a href="https://www.spectramsia.com/#work">Work</a></li>
+      <li><a href="https://www.spectramsia.com/projects/" class="is-active">Projects</a></li>
+      <li><a href="https://www.spectramsia.com/blog/">Blog</a></li>
+      <li><a href="https://www.spectramsia.com/#contact" class="mm-cta">Start a project →</a></li>
+    </ul>
+
+    <div class="page-shell">
+      <aside class="spectra-sidebar" id="site-nav" aria-label="Article navigation">
+        <a class="spectra-sidebar-brand" href="#top" aria-label="AMZ Scrapper Pro home">
+          <img src="assets/icon-128.png" alt="" width="34" height="34" />
+          <span>AMZ Scrapper Pro</span>
+        </a>
+        <p class="spectra-sidebar-label">On this page</p>
+        <nav class="spectra-sidebar-nav" aria-label="On this page">
+          <a href="#top">Overview</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#install">Installation</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="spectra-sidebar-actions">
+          <a class="button button-small" href="https://github.com/khooyc/amazon-data-scrapper-pro/archive/refs/heads/master.zip">Download extension</a>
+          <a class="spectra-sidebar-source" href="https://github.com/khooyc/amazon-data-scrapper-pro">View source on GitHub →</a>
+        </div>
+      </aside>
+      <button class="spectra-sidebar-backdrop" type="button" aria-hidden="true" tabindex="-1"></button>
+
+      <div class="page-content">
+        <button class="spectra-menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span>Contents</span><span class="menu-icon" aria-hidden="true">Menu</span>
+        </button>
+
+        <main id="main">
+          <section class="hero" id="top">
+            <div class="hero-copy">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Free Chrome extension</span>
+              <h1>Turn Amazon product pages into analysis-ready data.</h1>
+              <p class="hero-lede">Select the products you care about, extract prices, ASINs, ratings, reviews, BSR, variants and more, then download a clean Excel or CSV file in one click.</p>
+              <div class="button-row">
+                <a class="button" href="https://github.com/khooyc/amazon-data-scrapper-pro/archive/refs/heads/master.zip">Download extension</a>
+                <a class="button button-secondary" href="https://github.com/khooyc/amazon-data-scrapper-pro">View on GitHub</a>
+              </div>
+              <p class="download-note">Version 2.1 · Chrome, Edge, and Brave · Developer-mode install — no Chrome Web Store listing yet</p>
+            </div>
+            <button class="media-frame hero-media" type="button" data-lightbox="assets/screenshots/hero-product-research.png" aria-label="Enlarge the product research workflow illustration">
+              <img src="assets/screenshots/hero-product-research.png" alt="Product cards flowing through an extension into a structured data table" width="1568" height="1003" />
+            </button>
+          </section>
+
+          <div class="proof-wrap" aria-label="Extension facts at a glance">
+            <div class="proof-box">
+              <div class="proof-grid">
+                <div><div class="proof-num">8</div><div class="proof-label">Amazon marketplaces supported</div></div>
+                <div><div class="proof-num">15+</div><div class="proof-label">Data fields available</div></div>
+                <div><div class="proof-num">2</div><div class="proof-label">Export formats — XLSX and CSV</div></div>
+                <div><div class="proof-num">0</div><div class="proof-label">Accounts or subscriptions required</div></div>
+              </div>
+            </div>
+          </div>
+
+          <section class="problem-section" id="features" aria-labelledby="problem-heading">
+            <div class="section-heading center">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Built for focused research</span>
+              <h2 id="problem-heading">Capture the useful details without rebuilding a spreadsheet by hand.</h2>
+            </div>
+            <div class="problem-list">
+              <article class="problem-card" style="--card-accent:var(--accent)">
+                <span class="icon-box" style="background:var(--accent-tint); color:var(--accent-dark)">1</span>
+                <h3>See exactly what you're collecting</h3>
+                <p>Scan a search results page, choose individual products, and use the orange page highlight to confirm every selection before extraction.</p>
+                <div class="selection-demo" aria-label="Example selected products">
+                  <span class="selected">Selected · B0C7…4Q</span>
+                  <span>Not selected · B09X…8K</span>
+                  <span class="selected">Selected · B0D1…2P</span>
+                </div>
+              </article>
+              <article class="problem-card" style="--card-accent:var(--blue, #4c82f7)">
+                <span class="icon-box" style="background:rgba(76,130,247,0.13); color:#2e5fcc">2</span>
+                <h3>Choose the fields that matter</h3>
+                <p>Keep the default essentials or add ratings, reviews, BSR, dimensions, variants, release date, and other research fields.</p>
+              </article>
+              <article class="problem-card" style="--card-accent:var(--green)">
+                <span class="icon-box" style="background:var(--green-tint); color:#1f9c78">3</span>
+                <h3>Download, don't copy-paste</h3>
+                <p>Export a formatted Excel workbook or universal UTF-8 CSV, with timestamped filenames ready for your next analysis.</p>
+                <div class="file-types" aria-label="Supported export formats"><span>.XLSX</span><span>.CSV</span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="workflow" id="how-it-works" aria-labelledby="workflow-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How it works</span>
+              <h2 id="workflow-heading">Stay on the Amazon page. Leave with structured data.</h2>
+              <p>A simple three-step flow — no manual copy-paste.</p>
+            </div>
+
+            <article class="workflow-row">
+              <div class="workflow-copy">
+                <span class="step-label">Step 1</span>
+                <h3>Open a supported Amazon page</h3>
+                <p>Visit a product page or search results page on one of eight supported Amazon marketplaces, then open the extension.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/hero-product-research.png" aria-label="Enlarge the product research workflow illustration">
+                <img src="assets/screenshots/hero-product-research.png" alt="Opening the extension on a supported Amazon page" width="1568" height="1003" />
+              </button>
+            </article>
+
+            <article class="workflow-row workflow-row-reverse">
+              <div class="workflow-copy">
+                <span class="step-label">Step 2</span>
+                <h3>Select products and fields</h3>
+                <p>Rescan the page, select the listings you want with the orange highlight confirming each pick, and choose exactly which data points to extract.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/hero-product-research.png" aria-label="Enlarge the product research workflow illustration">
+                <img src="assets/screenshots/hero-product-research.png" alt="Selecting products and data fields to extract" width="1568" height="1003" />
+              </button>
+            </article>
+
+            <article class="workflow-row">
+              <div class="workflow-copy">
+                <span class="step-label">Step 3</span>
+                <h3>Export Excel or CSV</h3>
+                <p>Run the extraction and download the completed table as a formatted workbook, a CSV, or copy it straight to your clipboard.</p>
+              </div>
+              <button class="media-frame" type="button" data-lightbox="assets/screenshots/hero-product-research.png" aria-label="Enlarge the product research workflow illustration">
+                <img src="assets/screenshots/hero-product-research.png" alt="Exporting extracted data to Excel or CSV" width="1568" height="1003" />
+              </button>
+            </article>
+          </section>
+
+          <section class="control-section" aria-labelledby="fields-heading">
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Field coverage</span>
+              <h2 id="fields-heading">A practical product-research dataset</h2>
+              <p>Start with the core identifiers, then add richer listing information when you need a deeper comparison.</p>
+            </div>
+            <ul class="field-list">
+              <li><span>Product name</span><small>Default</small></li>
+              <li><span>Price</span><small>Default</small></li>
+              <li><span>ASIN</span><small>Default</small></li>
+              <li><span>Brand name</span><small>Default</small></li>
+              <li><span>Monthly sales</span><small>Default</small></li>
+              <li><span>Ratings &amp; reviews</span><small>Optional</small></li>
+              <li><span>BSR ranking</span><small>Optional</small></li>
+              <li><span>Color, size &amp; style variants</span><small>Optional</small></li>
+              <li><span>Weight &amp; dimensions</span><small>Optional</small></li>
+              <li><span>Release date &amp; timestamp</span><small>Optional</small></li>
+            </ul>
+          </section>
+
+          <section class="privacy-band" id="privacy" aria-labelledby="privacy-heading">
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Privacy</span>
+              <h2 id="privacy-heading">You stay in control of the pages and products being read</h2>
+              <p>The extension runs only when you invoke it on a supported Amazon page. It uses the active tab to read visible listing information and stores preferences locally in your browser.</p>
+              <a href="https://github.com/khooyc/amazon-data-scrapper-pro-policy" target="_blank" rel="noopener">Read the full privacy policy →</a>
+            </div>
+            <ul class="trust-list">
+              <li><strong>No account</strong><span>No sign-up or subscription required.</span></li>
+              <li><strong>No remote code</strong><span>Extraction and file creation happen in your browser.</span></li>
+              <li><strong>Open source</strong><span>The full implementation is public on GitHub.</span></li>
+            </ul>
+          </section>
+
+          <section class="install-section" id="install" aria-labelledby="install-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Installation</span>
+              <h2 id="install-heading">Install the extension in about five minutes</h2>
+              <p>AMZ Scrapper Pro is currently distributed through GitHub — there's no Chrome Web Store listing yet. Keep the extracted folder after installation; your browser loads the extension from that location.</p>
+            </div>
+            <ol class="install-steps">
+              <li><span class="install-number" aria-hidden="true">1</span><strong>Download.</strong><span>Get the ZIP from GitHub.</span></li>
+              <li><span class="install-number" aria-hidden="true">2</span><strong>Extract.</strong><span>Unzip it to a permanent folder.</span></li>
+              <li><span class="install-number" aria-hidden="true">3</span><strong>Open extensions.</strong><span>Go to <code>chrome://extensions</code>.</span></li>
+              <li><span class="install-number" aria-hidden="true">4</span><strong>Enable Developer mode.</strong><span>Use the switch in the top-right.</span></li>
+              <li><span class="install-number" aria-hidden="true">5</span><strong>Load unpacked.</strong><span>Select the folder with <code>manifest.json</code>.</span></li>
+            </ol>
+            <p class="install-help">For the full walkthrough, <a href="https://github.com/khooyc/amazon-data-scrapper-pro/blob/master/INSTALL.md">read the install guide on GitHub.</a></p>
+          </section>
+
+          <section class="trust-section" aria-labelledby="trust-heading">
+            <div>
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Clearly documented</span>
+              <h2 id="trust-heading">Free software, with the source in the open</h2>
+              <p>Review how the extension works, inspect its requested permissions, or report an issue directly on GitHub.</p>
+              <dl class="facts">
+                <div><dt>Maintainer</dt><dd><a href="https://github.com/khooyc">Khoo YC</a></dd></div>
+                <div><dt>Published by</dt><dd><a href="https://www.spectramsia.com/">Spectra (Spectrality Enterprise)</a></dd></div>
+                <div><dt>Source</dt><dd><a href="https://github.com/khooyc/amazon-data-scrapper-pro">Public on GitHub</a></dd></div>
+                <div><dt>Current version</dt><dd>2.1</dd></div>
+                <div><dt>License</dt><dd><a href="https://github.com/khooyc/amazon-data-scrapper-pro/blob/master/LICENSE">MIT</a></dd></div>
+              </dl>
+            </div>
+            <button class="media-frame" type="button" data-lightbox="assets/screenshots/hero-product-research.png" aria-label="Enlarge the product research workflow illustration">
+              <img src="assets/screenshots/hero-product-research.png" alt="AMZ Scrapper Pro product research workflow" width="1568" height="1003" />
+            </button>
+          </section>
+
+          <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="section-heading">
+              <span class="eyebrow"><span class="dot" aria-hidden="true"></span>FAQ</span>
+              <h2 id="faq-heading">Questions before you install</h2>
+              <p>Straight answers about what the extension can — and cannot — do.</p>
+            </div>
+            <div class="faq-list">
+              <details open>
+                <summary>Which Amazon sites are supported?</summary>
+                <p>Amazon US, UK, Germany, France, Spain, Italy, Canada and Australia are included in version 2.1.</p>
+              </details>
+              <details>
+                <summary>Does it work on search results and product pages?</summary>
+                <p>Yes. On search pages you can choose multiple products; on product pages the extension can inspect the current listing and its available variants.</p>
+              </details>
+              <details>
+                <summary>What can I export?</summary>
+                <p>You can download a formatted Excel workbook or a UTF-8 CSV file. A copy-to-clipboard option is also available.</p>
+              </details>
+              <details>
+                <summary>Is it affiliated with Amazon?</summary>
+                <p>No. AMZ Scrapper Pro is an independent productivity tool and is not affiliated with, sponsored by, or endorsed by Amazon.</p>
+              </details>
+              <details>
+                <summary>Is automated extraction always permitted?</summary>
+                <p>You are responsible for using the extension in accordance with Amazon's Conditions of Use and any laws or policies that apply in your jurisdiction.</p>
+              </details>
+              <details>
+                <summary>Where can I report a problem?</summary>
+                <p>Open a <a href="https://github.com/khooyc/amazon-data-scrapper-pro/issues">GitHub issue</a> with steps to reproduce it. Never include account credentials, customer information, or other private data.</p>
+              </details>
+            </div>
+          </section>
+
+          <div class="final-cta-wrap">
+            <section class="final-cta" aria-labelledby="cta-heading">
+              <h2 id="cta-heading">Collect the listings. Keep the data.</h2>
+              <p>Download AMZ Scrapper Pro free from GitHub and turn your next Amazon research session into a reusable dataset.</p>
+              <div class="button-row centered">
+                <a class="button" href="https://github.com/khooyc/amazon-data-scrapper-pro/archive/refs/heads/master.zip">Download extension</a>
+                <a class="button button-secondary" href="https://github.com/khooyc/amazon-data-scrapper-pro">View the source</a>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <div class="product-footer">
+          <div class="product-footer-inner">
+            <a class="product-footer-brand" href="#top" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;">
+              <img src="assets/icon-128.png" alt="" width="30" height="30" style="border-radius:8px;" />
+              <span>AMZ Scrapper Pro</span>
+            </a>
+            <div class="product-footer-links">
+              <a href="https://github.com/khooyc/amazon-data-scrapper-pro-policy" target="_blank" rel="noopener">Privacy Policy</a>
+              <a href="https://github.com/khooyc/amazon-data-scrapper-pro">GitHub</a>
+              <a href="https://github.com/khooyc/amazon-data-scrapper-pro/issues">Support</a>
+            </div>
+          </div>
+          <p class="product-footer-note">Amazon and its related marks are trademarks of Amazon.com, Inc. or its affiliates. Independent productivity tool; not affiliated with, sponsored by, or endorsed by Amazon.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer" style="width:min(1180px, calc(100% - 40px));margin:0 auto;padding:24px 0 56px;">
+      <div class="footer-inner spectra-row" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px 40px;padding-bottom:26px;border-bottom:1px solid var(--line);">
+        <a href="https://www.spectramsia.com/" class="nav-bar-brand">
+          <span class="nav-bar-dot" aria-hidden="true"></span>
+          <span>Spectra</span>
+        </a>
+        <span class="spectra-tagline" style="font-family:'Space Mono', monospace;font-size:12px;letter-spacing:0.08em;color:var(--muted-2);">The full spectrum of digital. · Back to spectramsia.com</span>
+      </div>
+    </footer>
+
+    <dialog class="lightbox" aria-label="Screenshot preview">
+      <button type="button" class="lightbox-close" aria-label="Close screenshot">×</button>
+      <img src="" alt="Enlarged extension screenshot" />
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
