@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagram Types: A Visual Guide to 47 Diagrams and When to Use Them | Spectra</title>
+<meta name="description" content="A visual reference of 47 diagram types, grouped by what you want to show: process and flow, comparison, relationships, structure, scales, data charts and planning. Each with a sketch and a real e-commerce example.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.spectramsia.com/blog/diagram-types-visual-guide/">
+<meta name="theme-color" content="#15141A">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Spectra">
+<meta property="og:title" content="Diagram Types: A Visual Guide to 47 Diagrams and When to Use Them">
+<meta property="og:description" content="Pick a diagram by what you need to say. 47 types, grouped by the question they answer.">
+<meta property="og:url" content="https://www.spectramsia.com/blog/diagram-types-visual-guide/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Hanken+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diagram Types: A Visual Guide to 47 Diagrams and When to Use Them",
+  "description": "A visual reference of 47 diagram types, grouped by what you want to show: process and flow, comparison, relationships, structure, scales, data charts and planning. Each with a sketch and a real e-commerce example.",
+  "author": { "@type": "Person", "name": "Khoo YC", "url": "https://github.com/khooyc" },
+  "publisher": { "@type": "Organization", "name": "Spectra", "url": "https://www.spectramsia.com/" },
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "mainEntityOfPage": "https://www.spectramsia.com/blog/diagram-types-visual-guide/"
+}
+</script>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  html, body { overflow-x:hidden; max-width:100%; }
+  body { background:#F7F4EF; font-family:'Hanken Grotesk',sans-serif; color:#15141A; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; }
+  ::selection { background:#A667F5; color:#fff; }
+  a { text-decoration:none; color:inherit; }
+  .btn-dark:hover { background:#2B2933; }
+  :focus-visible { outline:2px solid #A667F5; outline-offset:3px; border-radius:6px; }
+
+  .nav-toggle-input{ display:none; }
+  .nav-toggle-label{ display:none; width:36px; height:36px; align-items:center; justify-content:center; cursor:pointer; border-radius:8px; flex-shrink:0; }
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
+    content:""; display:block; width:20px; height:2px; background:#15141A; border-radius:2px;
+    position:relative; transition:transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle-label span::before{ position:absolute; top:-6px; }
+  .nav-toggle-label span::after{ position:absolute; top:6px; }
+  .mobile-menu{ display:none; }
+  @media (max-width:860px){
+    .nav-links{ display:none !important; }
+    .nav-toggle-label{ display:flex !important; }
+    .mobile-menu{ display:block; max-height:0; overflow:hidden; list-style:none; background:#fff; border-top:1px solid #E7E1D8; transition:max-height 0.25s ease; }
+    .mobile-menu li{ border-bottom:1px solid #EDE7DE; }
+    .mobile-menu a{ display:block; padding:14px 32px; font-size:15px; font-weight:500; }
+    .mobile-menu .mm-cta{ font-weight:600; color:#A667F5; }
+    .nav-toggle-input:checked ~ .mobile-menu{ max-height:320px; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span{ background:transparent; }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::before{ transform:translateY(6px) rotate(45deg); }
+    .nav-toggle-input:checked ~ .nav-bar .nav-toggle-label span::after{ transform:translateY(-6px) rotate(-45deg); }
+  }
+
+  .guide{ max-width:1180px; margin:0 auto; padding:64px 32px 96px; }
+  .intro{ max-width:720px; }
+  .article-tag{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8A8692; }
+  .guide h1{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:44px; line-height:1.08; letter-spacing:-0.03em; margin:14px 0 16px; }
+  .byline{ font-size:14px; color:#8A8692; margin-bottom:28px; }
+  .byline a{ color:#15141A; font-weight:600; }
+  .intro p{ font-size:17px; line-height:1.75; color:#3A3843; margin-bottom:20px; }
+
+  .ask{ font-size:15px; font-weight:600; color:#3A3843; margin:32px 0 12px; display:block; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ font:inherit; font-size:15px; font-weight:500; background:#fff; color:#15141A; border:1px solid #E7E1D8; padding:9px 16px; border-radius:999px; cursor:pointer; }
+  .chip:hover{ border-color:#15141A; }
+  .chip[aria-pressed="true"]{ background:#15141A; color:#fff; border-color:#15141A; }
+  .search{ width:100%; max-width:380px; font:inherit; font-size:15px; background:#fff; color:#15141A; border:1px solid #E7E1D8; border-radius:12px; padding:12px 16px; }
+
+  section.cat{ margin-top:60px; }
+  .cat-head{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-bottom:1px solid #E7E1D8; padding-bottom:14px; margin-bottom:20px; }
+  .cat-head h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:27px; letter-spacing:-0.02em; }
+  .cat-head p{ color:#8A8692; font-size:15px; }
+  .cat-head .sw{ width:12px; height:12px; border-radius:50%; align-self:center; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
+  .item{ background:#fff; border:1px solid #EDE7DE; border-radius:20px; padding:16px 18px 18px; }
+  .item svg{ display:block; width:100%; height:auto; background:#F7F4EF; border-radius:12px; padding:12px; margin-bottom:14px; }
+  .item h3{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.01em; margin-bottom:6px; }
+  .item .use{ font-size:15px; line-height:1.55; color:#6B6874; }
+  .item .eg{ margin-top:12px; padding-top:12px; border-top:1px solid #EDE7DE; font-size:14px; line-height:1.55; color:#3A3843; }
+  .item .eg span{ color:#8A8692; }
+  .empty{ color:#6B6874; margin-top:40px; font-size:16px; }
+
+  .refs{ margin-top:80px; }
+  .refs h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:27px; letter-spacing:-0.02em; margin-bottom:8px; }
+  .refs > p{ color:#6B6874; font-size:16px; margin-bottom:20px; }
+  .refs ul{ list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+  .refs li{ background:#fff; border:1px solid #EDE7DE; border-radius:16px; padding:18px 20px; }
+  .refs a{ font-weight:700; text-decoration:underline; text-decoration-color:#D9D2C7; text-underline-offset:3px; }
+  .refs li p{ margin-top:6px; color:#6B6874; font-size:14px; line-height:1.55; }
+
+  .cta-card{ background:#15141A; border-radius:24px; padding:44px; text-align:center; margin-top:64px; }
+  .cta-card h2{ font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; color:#fff; margin-bottom:12px; letter-spacing:-0.02em; }
+  .cta-card p{ color:#B4AFBC; font-size:16px; margin-bottom:24px; }
+  .cta-card a{ display:inline-block; font-weight:600; font-size:15px; color:#15141A; background:#fff; padding:14px 26px; border-radius:999px; }
+
+  .b{fill:#4C82F7}.t{fill:#35C79A}.a{fill:#FFB443}.c{fill:#FF5D6C}.g{fill:#A8A3AE}.r{fill:#A667F5}
+  .s{stroke:#B4AFBC;fill:none;stroke-width:1.2}.sd{stroke:#B4AFBC;fill:none;stroke-dasharray:3 3}.o{fill:none;stroke:#B4AFBC;stroke-width:.8}
+
+  @media (max-width:760px){
+    .guide{ padding:48px 24px 64px; }
+    .guide h1{ font-size:32px !important; }
+    .cta-card{ padding:32px 24px; }
+  }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+  .footer-inner{ max-width:1180px; margin:0 auto; padding:56px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media (max-width:560px){ .footer-inner{ flex-direction:column; text-align:center; padding:40px 24px; } }
+</style>
+</head>
+<body>
+
+<div style="overflow-x:hidden;">
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <nav class="nav-bar" style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(247,244,239,0.9);border-bottom:1px solid #E7E1D8;">
+    <div style="max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true">
+          <div style="width:13px;height:13px;border-radius:50%;background:#F7F4EF;"></div>
+        </div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:34px;">
+        <a href="/#services" style="font-size:15px;font-weight:500;color:#3A3843;">Services</a>
+        <a href="/projects/" style="font-size:15px;font-weight:500;color:#3A3843;">Projects</a>
+        <a href="/blog/" style="font-size:15px;font-weight:700;color:#15141A;">Blog</a>
+        <a href="/#contact" class="btn-dark" style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;color:#fff;background:#15141A;padding:10px 20px;border-radius:999px;">Start a project</a>
+      </div>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span></label>
+    </div>
+  </nav>
+  <ul class="mobile-menu">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/#contact" class="mm-cta">Start a project →</a></li>
+  </ul>
+
+  <main class="guide">
+    <div class="intro">
+      <span class="article-tag">Guide · Visual communication</span>
+      <h1>Diagram Types: A Visual Guide to 47 Diagrams and When to Use Them</h1>
+      <div class="byline">By <a href="https://github.com/khooyc" target="_blank" rel="noopener">Khoo YC</a> · Spectra · Updated 23 September 2026</div>
+      <p>Pick a diagram by what you need to say, not by how it looks. Every type below is grouped by the question it answers, with a short note on when to use it and an example from running an online business.</p>
+    </div>
+
+    <span class="ask" id="ask-label">What are you trying to show?</span>
+    <div class="chips" role="group" aria-labelledby="ask-label" id="chips"></div>
+    <label for="q" class="ask">Or search by name</label>
+    <input class="search" id="q" type="search" placeholder="e.g. funnel, venn, gantt" autocomplete="off">
+
+    <div id="list"></div>
+    <p class="empty" id="empty" hidden>No diagram matches that search. Try a shorter word, or pick a question above.</p>
+
+    <section class="refs" aria-labelledby="refs-h">
+      <h2 id="refs-h">Go deeper</h2>
+      <p>Larger libraries for when this guide doesn't have what you need.</p>
+      <ul>
+        <li><a href="https://datavizproject.com" target="_blank" rel="noopener">Data Viz Project</a><p>150+ types with pictures and real examples. Best for browsing.</p></li>
+        <li><a href="https://datavizcatalogue.com" target="_blank" rel="noopener">Data Visualisation Catalogue</a><p>Search by function: comparison, flow, part-to-whole.</p></li>
+        <li><a href="https://www.visual-literacy.org/periodic_table/periodic_table.html" target="_blank" rel="noopener">Periodic Table of Visualization Methods</a><p>Data charts plus strategy and concept diagrams on one page.</p></li>
+        <li><a href="https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary" target="_blank" rel="noopener">FT Visual Vocabulary</a><p>A one-page cheat sheet grouped by what you want to show.</p></li>
+        <li><a href="https://www.data-to-viz.com" target="_blank" rel="noopener">From Data to Viz</a><p>A decision tree that picks a chart from your data type.</p></li>
+      </ul>
+    </section>
+
+    <div class="cta-card">
+      <h2>Need diagrams for your pitch, site or store?</h2>
+      <p>Spectra designs clear visuals, websites and brand assets for Klang Valley businesses.</p>
+      <a href="/#contact">Start a project</a>
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #E7E1D8;">
+    <div class="footer-inner">
+      <a href="/" style="display:flex;align-items:center;gap:11px;">
+        <div style="width:26px;height:26px;border-radius:50%;background:conic-gradient(from 210deg,#FF5D6C,#FFB443,#35C79A,#4C82F7,#A667F5,#FF5D6C);display:flex;align-items:center;justify-content:center;" aria-hidden="true"><div style="width:12px;height:12px;border-radius:50%;background:#F7F4EF;"></div></div>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.02em;">Spectra</span>
+      </a>
+      <div style="text-align:center;">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#8A8692;">The full spectrum of digital. · © 2026 Spectra</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:#B4AFBC;margin-top:4px;">SSM Registered as Spectrality Enterprise — No. 202403201869 (IP0599248-P)</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+const CATS = [
+  {id:"flow", q:"How something moves or happens", name:"Process and flow", sw:"#4C82F7"},
+  {id:"compare", q:"How things compare or changed", name:"Comparison and story", sw:"#FFB443"},
+  {id:"rel", q:"Who or what connects", name:"Relationships", sw:"#35C79A"},
+  {id:"struct", q:"Where things sit", name:"Structure and positioning", sw:"#FF5D6C"},
+  {id:"scale", q:"Where something falls on a range", name:"Scales and spectrums", sw:"#A667F5"},
+  {id:"data", q:"How much or how many", name:"Data charts", sw:"#8A8692"},
+  {id:"time", q:"When things happen", name:"Time and planning", sw:"#4C82F7"}
+];
+
+const D = [
+/* Process and flow */
+["flow","Flowchart","Steps in order, with decision points that branch.","Order handling: paid? → pack, else → send reminder.",
+`<rect class="b" x="55" y="4" width="50" height="16" rx="3"/><polygon class="a" points="80,30 100,42 80,54 60,42"/><rect class="t" x="10" y="66" width="45" height="16" rx="3"/><rect class="t" x="105" y="66" width="45" height="16" rx="3"/><path class="s" d="M80 20V30M60 42H32V66M100 42H128V66"/>`],
+["flow","Funnel","A large group narrowing through stages to a few.","Visitors → add to cart → checkout → paid.",
+`<polygon class="b" points="5,15 45,22 45,68 5,75"/><polygon class="t" points="45,22 85,30 85,60 45,68"/><polygon class="a" points="85,30 120,36 120,54 85,60"/><polygon class="c" points="120,36 155,40 155,50 120,54"/>`],
+["flow","Swimlane","A process split into rows by who does each step.","Customer, you, courier: who does what in a delivery.",
+`<rect class="o" x="2" y="4" width="156" height="26"/><rect class="o" x="2" y="32" width="156" height="26"/><rect class="o" x="2" y="60" width="156" height="26"/><rect class="b" x="12" y="10" width="30" height="14" rx="2"/><rect class="t" x="62" y="38" width="30" height="14" rx="2"/><rect class="c" x="112" y="66" width="30" height="14" rx="2"/><path class="s" d="M42 17H77V38M92 45H127V66"/>`],
+["flow","Chevron process","A few simple stages with no branching.","Brief → design → build → launch.",
+`<polygon class="b" points="4,30 40,30 50,45 40,60 4,60 14,45"/><polygon class="b" opacity=".75" points="44,30 80,30 90,45 80,60 44,60 54,45"/><polygon class="b" opacity=".55" points="84,30 120,30 130,45 120,60 84,60 94,45"/><polygon class="b" opacity=".35" points="124,30 150,30 158,45 150,60 124,60 134,45"/>`],
+["flow","Cycle","Stages that repeat in a loop.","Plan → post → measure → adjust, every month.",
+`<circle class="sd" cx="80" cy="45" r="32"/><circle class="t" cx="80" cy="13" r="9"/><circle class="b" cx="112" cy="45" r="9"/><circle class="a" cx="80" cy="77" r="9"/><circle class="c" cx="48" cy="45" r="9"/>`],
+["flow","Input → process → output","The simplest view of any system.","Raw product photos → editing → store-ready images.",
+`<rect class="g" x="4" y="34" width="36" height="22" rx="4"/><rect class="b" x="62" y="34" width="36" height="22" rx="4"/><rect class="t" x="120" y="34" width="36" height="22" rx="4"/><path class="s" d="M40 45H62M98 45H120"/>`],
+["flow","Decision tree","Yes/no questions leading to different outcomes.","Which shipping option to offer a customer.",
+`<circle class="a" cx="80" cy="12" r="7"/><path class="s" d="M80 19L45 42M80 19L115 42M45 49L25 72M45 49L62 72M115 49L100 72M115 49L135 72"/><circle class="a" cx="45" cy="45" r="6"/><circle class="a" cx="115" cy="45" r="6"/><rect class="t" x="17" y="72" width="16" height="10" rx="2"/><rect class="t" x="54" y="72" width="16" height="10" rx="2"/><rect class="t" x="92" y="72" width="16" height="10" rx="2"/><rect class="t" x="127" y="72" width="16" height="10" rx="2"/>`],
+["flow","Fan-out / fan-in","Work that splits into parallel paths, then merges.","One product listing pushed to Shopee, Lazada, TikTok Shop.",
+`<rect class="b" x="4" y="36" width="30" height="18" rx="3"/><path class="s" d="M34 45L60 18M34 45L60 45M34 45L60 72M90 18L120 45M90 45L120 45M90 72L120 45"/><rect class="t" x="60" y="10" width="30" height="16" rx="3"/><rect class="t" x="60" y="37" width="30" height="16" rx="3"/><rect class="t" x="60" y="64" width="30" height="16" rx="3"/><rect class="c" x="120" y="36" width="34" height="18" rx="3"/>`],
+["flow","State diagram","The statuses something moves through.","Order: pending → paid → shipped → delivered.",
+`<circle class="o" cx="30" cy="45" r="16"/><circle class="b" cx="80" cy="45" r="16"/><circle class="o" cx="130" cy="45" r="16"/><path class="s" d="M46 38Q55 30 64 38M96 38Q105 30 114 38M114 52Q105 60 96 52"/>`],
+["flow","Sequence diagram","Messages passed back and forth between parties.","Customer, store and payment gateway during checkout.",
+`<rect class="b" x="10" y="10" width="44" height="16" rx="3"/><rect class="b" x="10" y="64" width="44" height="16" rx="3"/><rect class="c" x="106" y="37" width="44" height="16" rx="3"/><path class="s" d="M30 26V64M54 18L106 42M54 72L106 48"/>`],
+["flow","Customer journey map","Touchpoints a customer passes through, and how they feel.","From seeing an ad to leaving a review.",
+`<path d="M10 60Q40 20 60 40T110 30T150 55" stroke="#4C82F7" stroke-width="2" fill="none"/><circle class="b" cx="10" cy="60" r="4"/><circle class="t" cx="60" cy="40" r="4"/><circle class="t" cx="110" cy="30" r="4"/><circle class="c" cx="150" cy="55" r="4"/>`],
+["flow","Service blueprint","What the customer sees, above what happens backstage.","Front-of-house vs warehouse steps for one order.",
+`<rect class="o" x="4" y="10" width="36" height="70" rx="3"/><rect class="o" x="44" y="10" width="36" height="70" rx="3"/><rect class="o" x="84" y="10" width="36" height="70" rx="3"/><rect class="o" x="124" y="10" width="32" height="70" rx="3"/><rect class="b" opacity=".75" x="8" y="16" width="28" height="10" rx="2"/><rect class="b" opacity=".75" x="48" y="30" width="28" height="10" rx="2"/><rect class="b" opacity=".75" x="88" y="44" width="28" height="10" rx="2"/><rect class="b" opacity=".75" x="128" y="58" width="24" height="10" rx="2"/>`],
+["flow","Value stream map","Process steps plus the time or waste in each.","Where fulfilment days are lost.",
+`<rect class="b" x="4" y="12" width="40" height="18" rx="3"/><rect class="b" x="60" y="12" width="40" height="18" rx="3"/><rect class="b" x="116" y="12" width="40" height="18" rx="3"/><path class="s" d="M44 21H60M100 21H116"/><rect class="c" x="18" y="50" width="12" height="28" rx="2"/><rect class="c" x="74" y="44" width="12" height="34" rx="2"/><rect class="c" x="130" y="60" width="12" height="18" rx="2"/>`],
+["flow","Flywheel","A loop where each part speeds up the next.","Reviews → trust → sales → more reviews.",
+`<circle cx="80" cy="45" r="30" fill="none" stroke="#4C82F7" stroke-width="6" stroke-dasharray="40 7"/><circle class="b" cx="80" cy="45" r="10"/>`],
+
+/* Comparison and story */
+["compare","Before / after","An old state beside a new state, with the change named.","Manual orders in spreadsheets vs an automated dashboard.",
+`<rect class="o" x="4" y="10" width="60" height="70" rx="6"/><g class="g" opacity=".7"><rect x="12" y="20" width="12" height="8" rx="2"/><rect x="28" y="20" width="12" height="8" rx="2"/><rect x="44" y="20" width="12" height="8" rx="2"/><rect x="12" y="34" width="12" height="8" rx="2"/><rect x="28" y="34" width="12" height="8" rx="2"/><rect x="44" y="34" width="12" height="8" rx="2"/><rect x="12" y="48" width="12" height="8" rx="2"/><rect x="28" y="48" width="12" height="8" rx="2"/><rect x="44" y="48" width="12" height="8" rx="2"/></g><path class="s" d="M66 45H90"/><rect class="o" x="96" y="10" width="60" height="70" rx="6"/><rect class="b" x="104" y="38" width="16" height="12" rx="2"/><rect class="c" x="132" y="38" width="16" height="12" rx="2"/><path class="s" d="M120 44H132"/>`],
+["compare","Pros / cons","Two columns weighed against each other.","Selling on marketplaces vs your own website.",
+`<rect class="t" opacity=".25" x="8" y="8" width="68" height="74" rx="6"/><rect class="c" opacity=".25" x="84" y="8" width="68" height="74" rx="6"/><rect class="t" x="16" y="20" width="50" height="6" rx="3"/><rect class="t" x="16" y="34" width="40" height="6" rx="3"/><rect class="t" x="16" y="48" width="46" height="6" rx="3"/><rect class="c" x="92" y="20" width="50" height="6" rx="3"/><rect class="c" x="92" y="34" width="36" height="6" rx="3"/>`],
+["compare","Option comparison","Side-by-side options with one highlighted.","Basic, Growth and Pro website packages.",
+`<rect class="g" opacity=".6" x="14" y="16" width="36" height="58" rx="4"/><rect class="g" opacity=".6" x="62" y="16" width="36" height="58" rx="4"/><rect class="b" x="110" y="10" width="36" height="64" rx="4"/>`],
+["compare","Gap / bridge","Where you are, where you want to be, and how to cross.","From 50 to 500 orders a month.",
+`<rect class="g" x="6" y="30" width="40" height="30" rx="4"/><rect class="t" x="114" y="30" width="40" height="30" rx="4"/><path d="M46 45Q80 10 114 45" stroke="#4C82F7" stroke-width="3" fill="none"/>`],
+["compare","Iceberg","What's visible on top vs the hidden causes below.","Low sales on the surface; slow site and weak photos underneath.",
+`<line x1="4" y1="30" x2="156" y2="30" stroke="#4C82F7"/><polygon class="g" points="80,12 96,30 64,30"/><polygon class="b" opacity=".45" points="64,30 96,30 120,84 40,84"/>`],
+["compare","Icon array","A count made visible as repeated shapes.","8 in 12 visitors leave without buying.",
+`<g class="b"><circle cx="30" cy="30" r="6"/><circle cx="50" cy="30" r="6"/><circle cx="70" cy="30" r="6"/><circle cx="90" cy="30" r="6"/><circle cx="110" cy="30" r="6"/><circle cx="130" cy="30" r="6"/><circle cx="30" cy="55" r="6"/><circle cx="50" cy="55" r="6"/></g><g class="g" opacity=".4"><circle cx="70" cy="55" r="6"/><circle cx="90" cy="55" r="6"/><circle cx="110" cy="55" r="6"/><circle cx="130" cy="55" r="6"/></g>`],
+["compare","Waterfall chart","How a starting number was built up or eaten away.","Revenue → minus fees, shipping, ads → profit.",
+`<rect class="b" x="14" y="30" width="18" height="50"/><rect class="t" x="40" y="18" width="18" height="12"/><rect class="t" x="66" y="10" width="18" height="8"/><rect class="c" x="92" y="10" width="18" height="18"/><rect class="b" x="118" y="28" width="18" height="52"/>`],
+
+/* Relationships */
+["rel","Network graph","Actors as circles, links between them as lines.","Which influencers and pages drive traffic to you.",
+`<path class="s" stroke-width=".8" d="M30 45L80 20M30 45L75 65M80 20L130 30M75 65L130 30M75 65L125 72M80 20L75 65"/><circle class="g" cx="30" cy="45" r="10"/><circle class="b" cx="80" cy="20" r="13"/><circle cx="75" cy="65" r="8" fill="#6B6874"/><circle class="a" cx="130" cy="30" r="9"/><circle class="r" cx="125" cy="72" r="6"/>`],
+["rel","Venn diagram","Where groups overlap.","Customers who buy both skincare and supplements.",
+`<circle class="b" opacity=".5" cx="62" cy="45" r="30"/><circle class="c" opacity=".5" cx="98" cy="45" r="30"/>`],
+["rel","Mind map","Ideas branching out from one central topic.","Brainstorming a product launch.",
+`<path class="s" d="M80 45L30 18M80 45L130 18M80 45L28 72M80 45L132 72"/><ellipse class="b" cx="80" cy="45" rx="22" ry="12"/><rect class="t" x="12" y="12" width="34" height="12" rx="6"/><rect class="t" x="114" y="12" width="34" height="12" rx="6"/><rect class="t" x="10" y="66" width="34" height="12" rx="6"/><rect class="t" x="116" y="66" width="34" height="12" rx="6"/>`],
+["rel","Tree / org chart","A hierarchy: who reports to whom, what sits under what.","Site map: home → shop → categories → products.",
+`<path class="s" d="M80 20V32M35 32H125M35 32V44M80 32V44M125 32V44M35 58V66M20 66H50M20 66V72M50 66V72"/><rect class="b" x="62" y="6" width="36" height="14" rx="2"/><rect class="t" x="20" y="44" width="30" height="14" rx="2"/><rect class="t" x="65" y="44" width="30" height="14" rx="2"/><rect class="t" x="110" y="44" width="30" height="14" rx="2"/><rect class="g" x="10" y="72" width="20" height="12" rx="2"/><rect class="g" x="40" y="72" width="20" height="12" rx="2"/>`],
+["rel","Sankey diagram","Volume flowing from sources to destinations, line width = amount.","Traffic sources → pages → purchases.",
+`<rect class="b" x="4" y="10" width="10" height="70"/><rect class="t" x="146" y="10" width="10" height="30"/><rect class="c" x="146" y="46" width="10" height="34"/><path class="t" opacity=".35" d="M14 10C80 10 80 10 146 10V40C80 40 80 45 14 45Z"/><path class="c" opacity=".35" d="M14 45C80 45 80 46 146 46V80C80 80 80 80 14 80Z"/>`],
+["rel","Hub and spoke","One centre connected to many points.","Your brand at the centre, sales channels around it.",
+`<path class="s" d="M80 45L30 15M80 45L130 15M80 45L30 75M80 45L130 75M80 45L20 45M80 45L140 45"/><circle class="b" cx="80" cy="45" r="14"/><g class="t"><circle cx="30" cy="15" r="7"/><circle cx="130" cy="15" r="7"/><circle cx="30" cy="75" r="7"/><circle cx="130" cy="75" r="7"/><circle cx="20" cy="45" r="7"/><circle cx="140" cy="45" r="7"/></g>`],
+["rel","Fishbone","All the possible causes feeding one problem.","Why returns are high: sizing, photos, packaging, courier.",
+`<line x1="20" y1="45" x2="140" y2="45" stroke="#B4AFBC" stroke-width="2"/><path class="s" d="M50 45L35 18M50 45L35 72M90 45L75 18M90 45L75 72"/><rect class="c" x="140" y="36" width="16" height="18" rx="2"/>`],
+
+/* Structure and positioning */
+["struct","Pyramid","Levels stacked, from a wide base to a narrow top.","Loyal fans on top, casual buyers in the middle, visitors at the base.",
+`<polygon class="c" points="80,6 100,34 60,34"/><polygon class="a" points="60,36 100,36 118,60 42,60"/><polygon class="t" points="42,62 118,62 138,86 22,86"/>`],
+["struct","2×2 matrix","Sorting things by two yes/no qualities.","SWOT, or effort vs impact for marketing ideas.",
+`<rect class="t" opacity=".6" x="30" y="6" width="48" height="36"/><rect class="b" opacity=".6" x="82" y="6" width="48" height="36"/><rect class="g" opacity=".5" x="30" y="46" width="48" height="36"/><rect class="a" opacity=".6" x="82" y="46" width="48" height="36"/>`],
+["struct","Positioning map","Brands plotted on two axes to show where you stand.","Price vs quality: you vs three competitors.",
+`<line x1="80" y1="5" x2="80" y2="85" stroke="#B4AFBC"/><line x1="10" y1="45" x2="150" y2="45" stroke="#B4AFBC"/><circle class="b" cx="110" cy="22" r="6"/><circle class="g" cx="45" cy="30" r="6"/><circle class="g" cx="60" cy="68" r="6"/><circle class="g" cx="125" cy="60" r="6"/>`],
+["struct","Layered stack","Layers that build on each other.","Hosting → platform → theme → content.",
+`<rect class="b" x="20" y="8" width="120" height="16" rx="3"/><rect class="b" opacity=".75" x="20" y="28" width="120" height="16" rx="3"/><rect class="b" opacity=".5" x="20" y="48" width="120" height="16" rx="3"/><rect class="b" opacity=".3" x="20" y="68" width="120" height="16" rx="3"/>`],
+["struct","Block / architecture","What sits inside what.","Your website: frontend, CMS, payments, email.",
+`<rect class="sd" x="10" y="8" width="140" height="74" rx="10"/><rect class="t" opacity=".6" x="22" y="22" width="52" height="48" rx="6"/><rect class="a" opacity=".6" x="86" y="22" width="52" height="48" rx="6"/>`],
+
+/* Scales and spectrums */
+["scale","Annotated spectrum","Items placed along a range between two opposites.","Products from budget to premium.",
+`<rect class="b" opacity=".25" x="8" y="38" width="144" height="14" rx="3"/><rect class="b" opacity=".6" x="80" y="38" width="72" height="14" rx="3"/><path class="s" d="M35 38V24M100 38V24M65 52V66M130 52V66"/><g class="g"><rect x="22" y="16" width="26" height="6" rx="3"/><rect x="87" y="16" width="26" height="6" rx="3"/><rect x="52" y="68" width="26" height="6" rx="3"/><rect x="117" y="68" width="26" height="6" rx="3"/></g>`],
+["scale","Likert scale","A rating from one extreme to the other.","Post-purchase survey: 1 to 5 satisfaction.",
+`<g><circle class="o" cx="20" cy="45" r="9"/><circle class="o" cx="50" cy="45" r="9"/><circle class="o" cx="110" cy="45" r="9"/><circle class="o" cx="140" cy="45" r="9"/></g><circle class="b" cx="80" cy="45" r="9"/>`],
+["scale","Range bar","The low-to-high span for each item.","Price range per product category.",
+`<line x1="10" y1="20" x2="150" y2="20" stroke="#D9D2C7"/><rect class="b" x="30" y="16" width="60" height="8" rx="4"/><line x1="10" y1="45" x2="150" y2="45" stroke="#D9D2C7"/><rect class="t" x="60" y="41" width="70" height="8" rx="4"/><line x1="10" y1="70" x2="150" y2="70" stroke="#D9D2C7"/><rect class="c" x="20" y="66" width="40" height="8" rx="4"/>`],
+["scale","Dot / strip plot","Individual values along one line, showing clusters.","Order values: most cluster around RM50.",
+`<line x1="10" y1="45" x2="150" y2="45" stroke="#B4AFBC"/><g class="b" opacity=".8"><circle cx="25" cy="45" r="5"/><circle cx="48" cy="45" r="5"/><circle cx="55" cy="45" r="5"/><circle cx="90" cy="45" r="5"/><circle cx="96" cy="45" r="5"/><circle cx="102" cy="45" r="5"/><circle cx="138" cy="45" r="5"/></g>`],
+["scale","Bullet chart","Actual progress against a target.","Monthly sales vs goal.",
+`<rect class="g" opacity=".25" x="10" y="32" width="140" height="26"/><rect class="g" opacity=".3" x="10" y="32" width="100" height="26"/><rect class="b" x="10" y="40" width="88" height="10"/><line x1="120" y1="28" x2="120" y2="62" stroke="#FF5D6C" stroke-width="2"/>`],
+
+/* Data charts */
+["data","Bar chart","Comparing amounts across categories.","Sales by product.",
+`<rect class="b" x="20" y="40" width="18" height="44"/><rect class="b" x="50" y="20" width="18" height="64"/><rect class="b" x="80" y="52" width="18" height="32"/><rect class="b" x="110" y="10" width="18" height="74"/>`],
+["data","Line chart","A trend over time.","Monthly revenue this year.",
+`<polyline points="10,70 45,50 80,58 115,25 150,15" stroke="#4C82F7" stroke-width="2.5" fill="none" stroke-linejoin="round"/>`],
+["data","Pie / donut","Shares of one whole. Best with 2 to 4 slices.","Revenue split by channel.",
+`<circle cx="80" cy="45" r="30" fill="none" stroke="#4C82F7" stroke-width="14" stroke-dasharray="94 189"/><circle cx="80" cy="45" r="30" fill="none" stroke="#35C79A" stroke-width="14" stroke-dasharray="57 189" stroke-dashoffset="-94"/><circle cx="80" cy="45" r="30" fill="none" stroke="#FFB443" stroke-width="14" stroke-dasharray="38 189" stroke-dashoffset="-151"/>`],
+["data","Scatter plot","Whether two numbers move together.","Ad spend vs orders per day.",
+`<g class="b"><circle cx="25" cy="70" r="4"/><circle cx="45" cy="60" r="4"/><circle cx="65" cy="55" r="4"/><circle cx="85" cy="40" r="4"/><circle cx="105" cy="38" r="4"/><circle cx="125" cy="22" r="4"/><circle cx="140" cy="18" r="4"/></g>`],
+["data","Treemap","Nested parts sized by value.","Inventory value by category and product.",
+`<rect class="b" x="6" y="6" width="90" height="78"/><rect class="t" x="98" y="6" width="56" height="44"/><rect class="a" x="98" y="52" width="30" height="32"/><rect class="c" x="130" y="52" width="24" height="32"/>`],
+["data","Heatmap","Intensity across a grid, darker = more.","Orders by day of week and hour.",
+(()=>{const o=[.2,.6,.9,.4,.3,.5,1,.7,.2,.6,.8,.3,.5,.9,.4];let s="";o.forEach((v,i)=>{s+=`<rect class="b" opacity="${v}" x="${20+(i%5)*24}" y="${10+Math.floor(i/5)*24}" width="22" height="22"/>`});return s})()],
+
+/* Time and planning */
+["time","Timeline","Events placed in order along time.","Company milestones since 2024.",
+`<line x1="8" y1="45" x2="152" y2="45" stroke="#B4AFBC" stroke-width="2"/><circle class="b" cx="25" cy="45" r="6"/><circle class="b" cx="65" cy="45" r="6"/><circle class="b" cx="105" cy="45" r="6"/><circle class="c" cx="140" cy="45" r="6"/><rect class="b" opacity=".4" x="12" y="15" width="26" height="10" rx="2"/><rect class="b" opacity=".4" x="52" y="65" width="26" height="10" rx="2"/><rect class="b" opacity=".4" x="92" y="15" width="26" height="10" rx="2"/>`],
+["time","Gantt chart","Tasks as bars across a schedule, showing overlap.","A 6-week campaign or website build plan.",
+`<rect class="b" x="10" y="10" width="60" height="12" rx="3"/><rect class="t" x="45" y="30" width="55" height="12" rx="3"/><rect class="a" x="85" y="50" width="45" height="12" rx="3"/><rect class="c" x="110" y="70" width="40" height="12" rx="3"/>`],
+["time","Kanban board","Work sorted into columns by status.","To do, in progress, done for client projects.",
+`<rect class="o" x="6" y="6" width="44" height="78" rx="4"/><rect class="o" x="58" y="6" width="44" height="78" rx="4"/><rect class="o" x="110" y="6" width="44" height="78" rx="4"/><rect class="g" x="12" y="14" width="32" height="12" rx="2"/><rect class="g" x="12" y="30" width="32" height="12" rx="2"/><rect class="b" x="64" y="14" width="32" height="12" rx="2"/><rect class="t" x="116" y="14" width="32" height="12" rx="2"/><rect class="t" x="116" y="30" width="32" height="12" rx="2"/>`]
+];
+
+const list = document.getElementById("list");
+const chipsEl = document.getElementById("chips");
+const q = document.getElementById("q");
+const empty = document.getElementById("empty");
+let active = "all";
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+const chipDefs = [{id:"all",q:"Everything"}].concat(CATS);
+chipDefs.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="chip";b.type="button";b.textContent=c.q;b.dataset.id=c.id;
+  b.setAttribute("aria-pressed",c.id==="all");
+  b.addEventListener("click",()=>{active=c.id;render()});
+  chipsEl.appendChild(b);
+});
+
+function render(){
+  const term=q.value.trim().toLowerCase();
+  chipsEl.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===active));
+  let html="",count=0;
+  CATS.forEach(cat=>{
+    if(active!=="all"&&active!==cat.id)return;
+    const items=D.filter(d=>d[0]===cat.id&&(!term||(d[1]+" "+d[2]+" "+d[3]).toLowerCase().includes(term)));
+    if(!items.length)return;
+    count+=items.length;
+    html+=`<section class="cat" aria-labelledby="h-${cat.id}"><div class="cat-head"><span class="sw" style="background:${cat.sw}" aria-hidden="true"></span><h2 id="h-${cat.id}">${cat.name}</h2><p>${cat.q}</p></div><div class="grid">`;
+    items.forEach(d=>{
+      html+=`<article class="item"><svg viewBox="0 0 160 90" role="img" aria-label="Sketch of a ${esc(d[1].toLowerCase())}">${d[4]}</svg><h3>${esc(d[1])}</h3><p class="use">${esc(d[2])}</p><p class="eg"><span>For example:</span> ${esc(d[3])}</p></article>`;
+    });
+    html+=`</div></section>`;
+  });
+  list.innerHTML=html;
+  empty.hidden=count>0;
+}
+q.addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
